@@ -18,15 +18,20 @@
         <h1>
             The Brokers 📈
         </h1>
+
+        <!-- Append in JavaScript -->
+        <div class="container">
+            <ul class="stock-header"></ul>
+        </div>
     </header>
 
     <!-- start of main section -->
     <main>
 
         <div class="container">
-
+            <!-- Search button and stock display container -->
             <div class="row">
-
+                <!-- Search Button -->
                 <div class="col m3">
                     <div class="card">
                         <h3 class="card-header text-uppercase">Stock Search:</h3>
@@ -36,22 +41,27 @@
                             <button type="submit" class="btn">Search</button>
                         </form>
                     </div>
-
+                    <!-- Stock display container (local storage for user inputs) -->
                     <div id="stock-container">
-                    <h2>HEY THERE!</h2>
+                        <h2>Hello</h2>
+                        <div class="stored-stocks"></div>
                     </div>
-                </div>
 
-                <div class="col m9">
+                </div>
+                <!-- Stock Information from user input -->
+                <div class="col m9 stock-info-container">
                     <div class="card">
-                        <div id="stock-charts"></div>
+                        <div id="stock-charts">
+                            <h2>Hi</h2>
+                            <!-- <iframe src="https://www.investing.com/equities/united-states" title="Yahoo finance Trending Tickers" frameborder="0"></iframe> -->
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="news-container">
-
+                    <h2>News yeaaa</h2>
                 </div>
             </div>
         </div>
