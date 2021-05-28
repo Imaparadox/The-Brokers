@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link to style sheet -->
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- Materialize CSS, Bootstrap alternative, we can pick another style too, just using as placehodler -->
+    <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <title>The Brokers</title>
@@ -18,15 +18,20 @@
         <h1>
             The Brokers 📈
         </h1>
+
+        <!-- Append in JavaScript -->
+        <div class="container">
+            <ul class="stock-header"></ul>
+        </div>
     </header>
 
     <!-- start of main section -->
     <main>
 
         <div class="container">
-
+            <!-- Search button and stock display container -->
             <div class="row">
-
+                <!-- Search Button -->
                 <div class="col m3">
                     <div class="card">
                         <h3 class="card-header text-uppercase">Stock Search:</h3>
@@ -45,21 +50,27 @@
                         <p>Enter A Required Stock Ticker</p>
                     </div>
 
+                    <!-- Stock display container (local storage for user inputs) -->
                     <div id="stock-container">
-                    <h2>HEY THERE!</h2>
+                        <h2>Hello</h2>
+                        <div class="stored-stocks"></div>
                     </div>
-                </div>
 
-                <div class="col m9">
+                </div>
+                <!-- Stock Information from user input -->
+                <div class="col m9 stock-info-container">
                     <div class="card">
-                        <div id="stock-charts"></div>
+                        <div id="stock-charts">
+                            <h2>Hi</h2>
+                            <!-- <iframe src="https://www.investing.com/equities/united-states" title="Yahoo finance Trending Tickers" frameborder="0"></iframe> -->
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="news-container">
-
+                    <h2>News yeaaa</h2>
                 </div>
             </div>
         </div>
@@ -73,8 +84,7 @@
 
     <!-- JQuery Library Link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Materialize JavaScript File, just place holder, if we find another one 
-    Like Bootstrap, it uses both CSS and JS links-->
+    <!-- Materialize JavaScript Link-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Link to script file -->
     <script src="./assets/js/script.js"></script>
