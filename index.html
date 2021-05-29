@@ -15,9 +15,11 @@
 
 <body>
     <header>
-        <h1>The Brokers 📈</h1>
-        <nav>
+        <!-- <h1 class="grey-text text-lighten-5">The Brokers 📈</h1> -->
+        <nav class="z-depth-0">
             <div class="nav-wrapper">
+                <h1 class="grey-text text-lighten-5">The Brokers 📈</h1>
+            <!-- <div class="nav-wrapper "> -->
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#stock-search">Search Stocks</a></li>
                     <li><a href="#user-search">Your Stocks</a></li>
@@ -26,11 +28,11 @@
                 </ul>
             </div>
         </nav>
-        </div>
-        <!-- Append in JavaScript -->
-        <div class="container">
-            <!-- Changed to div to not have as many list items outside of nav-->
-            <div class="stock-header"></div>
+        <div class="grey darken-3">
+            <div class="container">
+                <!-- Changed to div to not have as many list items outside of nav-->
+                <div class="stock-header"></div>
+            </div>
         </div>
     </header>
 
@@ -38,11 +40,11 @@
     <main>
         <div class="container">
             <!-- Search button and stock display container -->
-            <div class="row">
+            <div id="stock-search" class="row">
                 <!-- Search Button -->
                 <div class="col m3">
                     <div class="card">
-                        <h3 id="stock-search" class="card-header text-uppercase">Stock Search:</h3>
+                        <h3 class="card-header text-uppercase">Stock Search:</h3>
                         <form id="user-form" class="card-body">
                             <label class="form-label" for="stock">Stock</label>
                             <input name="stock" id="stock" type="text" autofocus="true" class="form-input" />
@@ -75,8 +77,8 @@
                     </div>
                 </div>
             </div>
-              <!-- News Information -->
-              <div class="row">
+            <!-- News Information -->
+            <div class="row">
                 <h2>News Container</h2>
                 <div class="news-container-0 col s6 " id="news"></div>
                 <div class="news-container-1 col s6 " id="news"></div>
@@ -91,9 +93,13 @@
         <h4>Contact Us:</h4>
         <!-- Just copy the line below and change the href link to include your github name! -->
         <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
+        <br>
         <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
+        <br>
         <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
+        <br>
         <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
+        <br>
         <p>The Brokers, Copyright &copy; 2021</p>
     </footer>
 
