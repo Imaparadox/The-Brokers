@@ -14,6 +14,14 @@ $(document).ready(function () {
 
     // when page first loads all stored user inputs display as buttons
 
+    // console.log(stockname);
+    // var storedStock = localStorage.getItem(stockname);
+    keys = Object.keys(localStorage);
+    for (i=0; length < keys.length; i++) {
+        $('#stock-container').append(keys);
+        // $('#stock-container').append('<input type="button id=' + key + 'value=' + key + 'class="btn">');
+    };
+    
     // when button is clicked
     $('.btn').click(function () {
 
@@ -23,7 +31,10 @@ $(document).ready(function () {
         console.log(stockname);
 
         //local storage 
-        localStorage.setItem(name, stockname);
+        localStorage.setItem(stockname, "");
+        
+        //create button for searched stock
+
 
         if (stockname) {
             getStockInfo(stockname);
