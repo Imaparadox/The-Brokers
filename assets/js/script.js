@@ -26,30 +26,31 @@ $(document).ready(function () {
     
     $('#stock-input').click(function () {
 
+        keys = Object.keys(localStorage);
+
         // get value from input search
         stockname = $('#stock').val().toUpperCase();
-        var name = $('#stock').attr('name');
         console.log(stockname);
         
         // do not store null values
         if (!stockname) {
-            return false
-        }
-
-        // do not store repeat stock tickers
-        
-        //local storage 
-        localStorage.setItem(stockname, "");
-        
-        //create button for searched stock
-        $('#stock-container').append('<button type="submit" id="' + stockname + '" value="' + stockname + '" class="btn" >' + stockname + '</button>');
-
-        if (stockname) {
-            getStockInfo(stockname);
-            stockInputEl.value = "";
-        } else {
             modal1.style.display = "block";
-        }
+            return false
+        };
+        
+        //create button for unique searched stock
+        var checkKeys = jQuery.inArray( stockname, keys);
+
+        // unique value < 0 , repeat value > 0
+        if (checkKeys < 0) {
+            
+            //local storage 
+            localStorage.setItem(stockname, "");
+
+            $('#stock-container').append('<button type="submit" id="' + stockname + '" value="' + stockname + '" class="btn" >' + stockname + '</button>');
+        };
+
+        getStockInfo(stockname);
 
         return false
     });
