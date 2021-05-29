@@ -75,7 +75,7 @@ function getNews() {
                 authorName.innerHTML = pub;
 
                 // Article description
-                var descrip = data.results[i].description
+                var descrip = data.results[i].description;
                 var descripDetail = document.createElement("p");
                 var length = 150;
                 var trimmedString = descrip.substring(0, length);
@@ -88,10 +88,18 @@ function getNews() {
                 forImgEl.setAttribute("width", "304");
                 forImgEl.setAttribute("height", "228");
 
+                //Onclick of article, open article on seperate tab
+                var artc = data.results[i].article_url;
+                var artcLink = document.createElement("a");
+                artcLink.setAttribute("href", artc);
+                artcLink.setAttribute("target", "_blank");
+                artcLink.innerHTML = artc;
+
                 // append each variable
                 displayNews.appendChild(authorName);
                 displayNews.appendChild(descripDetail);
                 displayNews.appendChild(forImgEl);
+                displayNews.appendChild(artcLink);
             }
         })
 }
