@@ -77,7 +77,8 @@ function getNews() {
 
             // DISPLAY 4 NEW ARTICLES
             for (var i = 0; i < 4; i++) {
-                var displayNews = document.getElementById('news');
+                var displayNews = document.querySelector(".news-container-" + i);
+
 
                 // Author of Article
                 var pub = data.results[i].author;
@@ -85,7 +86,7 @@ function getNews() {
                 authorName.innerHTML = pub;
 
                 // Article description
-                var descrip = data.results[i].description
+                var descrip = data.results[i].description;
                 var descripDetail = document.createElement("p");
                 var length = 150;
                 var trimmedString = descrip.substring(0, length);
@@ -98,10 +99,19 @@ function getNews() {
                 forImgEl.setAttribute("width", "304");
                 forImgEl.setAttribute("height", "228");
 
+                //Onclick of article, open article on seperate tab
+                var artc = data.results[i].article_url;
+                var artcLink = document.createElement("a");
+                artcLink.setAttribute("href", artc);
+                artcLink.setAttribute("target", "_blank");
+
+                // wrap <a href> around <h3> <p> and <img> tags
+                artcLink.appendChild(authorName);
+                artcLink.appendChild(descripDetail);
+                artcLink.appendChild(forImgEl);
+
                 // append each variable
-                displayNews.appendChild(authorName);
-                displayNews.appendChild(descripDetail);
-                displayNews.appendChild(forImgEl);
+                displayNews.appendChild(artcLink);
             }
         })
 }
