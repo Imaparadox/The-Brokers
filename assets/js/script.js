@@ -17,10 +17,19 @@ $(document).ready(function () {
     keys = Object.keys(localStorage);
     for (i=0; i < keys.length; i++) {
         // append stock ticker to buttons
-        $('#stock-container').append('<button type="submit" id="' + keys[i] + '" value="' + keys[i] + '" class="btn" >' + keys[i] + '</button>');
+        $('#stock-container').append('<button type="submit" id="' + keys[i] + '" value="' + keys[i] + '" class="btn btn-stored" >' + keys[i] + '</button>');
     };
     
-    // button click
+    // button click for stored stock tickers
+    $('.btn-stored').click(function () {
+        // find stock ticker 
+        var stockname = $(this).attr('value');
+
+        getStockInfo(stockname);
+        getNews(stockname);
+
+    });
+
     // grab id value and push that to stockname
 
     
@@ -47,7 +56,7 @@ $(document).ready(function () {
             //local storage 
             localStorage.setItem(stockname, "");
 
-            $('#stock-container').append('<button type="submit" id="' + stockname + '" value="' + stockname + '" class="btn" >' + stockname + '</button>');
+            $('#stock-container').append('<button type="submit" id="' + stockname + '" value="' + stockname + '" class="btn btn-stored" >' + stockname + '</button>');
         };
 
         getStockInfo(stockname);
@@ -72,7 +81,7 @@ var getStockInfo = function (userStock) {
         }
         getNews();
     })
-    console.log(stockname);
+    
 }
 
 // variable that will grab today's date to display recent news articles
