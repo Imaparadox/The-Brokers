@@ -67,7 +67,7 @@ function getNews() {
 
             // DISPLAY 4 NEW ARTICLES
             for (var i = 0; i < 4; i++) {
-                var displayNews = document.getElementById('news');
+                var displayNews = document.querySelector(".news-container-" + i);
 
                 // Author of Article
                 var pub = data.results[i].author;
