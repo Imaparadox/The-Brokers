@@ -72,8 +72,18 @@ function getNews() {
                 console.log(pub);
                 var authorName = document.createElement("H3");
                 authorName.innerHTML = pub;
-                displayNews.appendChild(authorName);
 
+                // Article description
+                var descrip = data.results[i].description
+                var descripDetail = document.createElement("p");
+                var length = 150;
+                var trimmedString = descrip.substring(0, length);
+                descripDetail.innerHTML = trimmedString;
+
+
+                // append each variable
+                displayNews.appendChild(authorName);
+                displayNews.appendChild(descripDetail);
             }
         })
 }
