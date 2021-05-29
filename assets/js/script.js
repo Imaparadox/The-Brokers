@@ -62,14 +62,14 @@ function getNews() {
         })
         .then(function (data) {
             console.log(data);
-
+            //VERIFY STOCKNAME IS GRABBED
             console.log(stockname);
 
-            for (var i = 0; i < 3; i++) {
+            // DISPLAY 4 NEW ARTICLES
+            for (var i = 0; i < 4; i++) {
                 var displayNews = document.getElementById('news');
                 // Author of Article
                 var pub = data.results[i].author;
-                console.log(pub);
                 var authorName = document.createElement("H3");
                 authorName.innerHTML = pub;
 
