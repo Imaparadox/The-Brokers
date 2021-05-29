@@ -37,16 +37,56 @@ $(document).ready(function () {
 
 });
 
-var getStockInfo = function (userStock) {
+var getStockInfo = function () {
 
     // stcok api function fetch
     var apiKey = "28c7003db6dc4105bd96e1de1fe13c21";
-    var apiUrl = "https://api.twelvedata.com/time_series?symbol=" + userStock + ",MSFT,EUR/USD,SBUX,NKE&interval=1min&apikey=" + apiKey;
+    var apiUrl = "https://api.twelvedata.com/time_series?symbol=" + stockname + "&interval=1h&apikey=" + apiKey;
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
-                console.log(data)
-            });
+                console.log(data);
+                
+                // Display Stock Symbol in Title
+                var stockTitleEl = document.createElement("h3");
+                var sym = document.createElement("span");
+                sym.textContent = "Stock:  " + data.meta.symbol+ "           ";
+                stockTitleEl.appendChild(sym);            
+
+                // Display Currency type in Title
+                curr = document.createElement("span");
+                curr.textContent = "Currency:  " + data.meta.currency;
+                stockTitleEl.appendChild(curr);
+
+                // Append Title into Stock Info Div
+                var displayStock = document.querySelector("#stock-info");
+                displayStock.appendChild(stockTitleEl);
+               
+                var stockInfoEl = document.createElement("div");
+                // Loop over the last 10 hours for stock info
+                for (var i = 0; i < 10; i++) {
+
+                    stockInfoEl.classList = "list-item justify-space-between center-align card-panel hoverable";
+
+                    // display date and time for stock info
+                    var dateTimeEl = document.createElement("span");
+                    dateTimeEl.textContent = data.values[i].datetime + "                ";
+                    stockInfoEl.appendChild(dateTimeEl);
+
+                    //display Open Price of Stock for time block
+                    var openEl = document.createElement("span");
+                    openEl.textContent = "Open Price:  " + data.values[i].open + "               ";
+                    stockInfoEl.appendChild(openEl);
+
+                    //display Close Price of Stock for time block
+                    var closeEl = document.createElement("span");
+                    closeEl.textContent = "Close Price:  " + data.values[i].close;
+                    stockInfoEl.appendChild(closeEl);
+
+                    
+                    displayStock.appendChild(stockInfoEl);
+                }       
+                });
         } else {
             modal2.style.display = "block";
         }
