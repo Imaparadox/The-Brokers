@@ -93,7 +93,11 @@ function getNews() {
                 var artcLink = document.createElement("a");
                 artcLink.setAttribute("href", artc);
                 artcLink.setAttribute("target", "_blank");
-                artcLink.innerHTML = artc;
+                
+                // wrap <a href> around <h3> <p> and <img> tags
+                artcLink.appendChild(authorName);
+                artcLink.appendChild(descripDetail);
+                artcLink.appendChild(forImgEl);
 
                 // append each variable
                 displayNews.appendChild(authorName);
