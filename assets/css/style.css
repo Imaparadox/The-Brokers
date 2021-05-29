@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1976d2;
+    --secondary-color: #81d4fa;
+    --tertiary-color: #fff176;
+    --quaternary-color: #e0e0e0;
+    --quinary-color: #424242 ;
+}
+  
+html {
+    scroll-padding: 150px;
+  }
+
+header {
+    padding: 20px 25px;  
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+h1 {
+    display: inline;
+}
+
+.nav-wrapper {
+    background-color: var(--primary-color);
+    border: none;
+}

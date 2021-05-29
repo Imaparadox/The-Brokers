@@ -15,22 +15,32 @@
 
 <body>
     <header>
-        <h1>
-            The Brokers 📈
-        </h1>
-
-        <!-- Append in JavaScript -->
-        <div class="container">
-            <ul class="stock-header"></ul>
+        <!-- <h1 class="grey-text text-lighten-5">The Brokers 📈</h1> -->
+        <nav class="z-depth-0">
+            <div class="nav-wrapper">
+                <h1 class="grey-text text-lighten-5">The Brokers 📈</h1>
+            <!-- <div class="nav-wrapper "> -->
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#stock-search">Search Stocks</a></li>
+                    <li><a href="#user-search">Your Stocks</a></li>
+                    <li><a href="#stock-charts">Stock Charts</a></li>
+                    <li><a href="#stock-news">Stock News</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="grey darken-3">
+            <div class="container">
+                <!-- Changed to div to not have as many list items outside of nav-->
+                <div class="stock-header"></div>
+            </div>
         </div>
     </header>
 
     <!-- start of main section -->
     <main>
-
         <div class="container">
             <!-- Search button and stock display container -->
-            <div class="row">
+            <div id="stock-search" class="row">
                 <!-- Search Button -->
                 <div class="col m3">
                     <div class="card">
@@ -52,7 +62,7 @@
 
                     <!-- Stock display container (local storage for user inputs) -->
                     <div id="stock-container">
-                        <h2>Hello</h2>
+                        <h2 id="user-search">User Local Storage</h2>
                         <div class="stored-stocks"></div>
                     </div>
 
@@ -61,29 +71,36 @@
                 <div class="col m9 stock-info-container">
                     <div class="card">
                         <div id="stock-charts">
-                            <h2>Hi</h2>
+                            <h2>Stock Info</h2>
                             <!-- <iframe src="https://www.investing.com/equities/united-states" title="Yahoo finance Trending Tickers" frameborder="0"></iframe> -->
                         </div>
                     </div>
                 </div>
             </div>
-
             <!-- News Information -->
             <div class="row">
-                <h2>DA NEWS</h2>
+                <h2>News Container</h2>
                 <div class="news-container-0 col s6 " id="news"></div>
                 <div class="news-container-1 col s6 " id="news"></div>
                 <div class="news-container-2 col s6 " id="news"></div>
                 <div class="news-container-3 col s6 " id="news"></div>
             </div>
-
         </div>
     </main>
 
+    <!-- Can make changes in the future with footer -->
     <footer>
-        <p>
-            footer
-        </p>
+        <h4>Contact Us:</h4>
+        <!-- Just copy the line below and change the href link to include your github name! -->
+        <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
+        <br>
+        <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
+        <br>
+        <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
+        <br>
+        <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
+        <br>
+        <p>The Brokers, Copyright &copy; 2021</p>
     </footer>
 
     <!-- JQuery Library Link -->
