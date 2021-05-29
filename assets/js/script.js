@@ -17,7 +17,7 @@ $(document).ready(function () {
     // console.log(stockname);
     // var storedStock = localStorage.getItem(stockname);
     keys = Object.keys(localStorage);
-    for (i=0; length < keys.length; i++) {
+    for (i=0; i < keys.length; i++) {
         $('#stock-container').append(keys);
         // $('#stock-container').append('<input type="button id=' + key + 'value=' + key + 'class="btn">');
     };
