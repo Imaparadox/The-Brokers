@@ -12,10 +12,10 @@ modalEl2.style.display = "none";
 
 var searchStock = function (event) {
     event.preventDefault();
-    
+
     // get value from input search
     stockname = stockInputEl.value.trim();
-    
+
     if (stockname) {
         getStockInfo(stockname);
         stockInputEl.value = "";
@@ -32,7 +32,7 @@ var getStockInfo = function (userStock) {
     var apiUrl = "https://api.twelvedata.com/time_series?symbol=" + userStock + ",MSFT,EUR/USD,SBUX,NKE&interval=1min&apikey=" + apiKey;
     fetch(apiUrl).then(function (response) {
         if (response.ok) {
-            response.json().then(function(data) {
+            response.json().then(function (data) {
                 console.log(data)
             });
         } else {
@@ -48,20 +48,32 @@ userFormEl.addEventListener("submit", searchStock);
 
 
 // variable that will grab today's date to display recent news articles
-var todayDate = new Date().toJSON().slice(0,10);
+var todayDate = new Date().toJSON().slice(0, 10);
 console.log(todayDate);
 
 // API FETCH REQUEST FOR NEWS ARTICLES RELATED TO USER STOCK
-function getNews (){
+function getNews() {
     var apiPoly = "6GrCrAyGOSpscsyzmo4hVcfw6OJse4D1";
     fetch(
         'https://api.polygon.io/v2/reference/news?limit=10&order=descending&sort=published_utc&ticker=' + stockname + '&published_utc.gte=' + todayDate + '&apiKey=' + apiPoly
-        )
-        .then(function (response){
+    )
+        .then(function (response) {
             return response.json();
         })
-        .then(function (data){
+        .then(function (data) {
             console.log(data);
+
+            console.log(stockname);
+
+            for (var i = 0; i < 3; i++) {
+                var displayNews = document.getElementById('news');
+                // Author of Article
+                var pub = data.results[i].author;
+                console.log(pub);
+                var authorName = document.createElement("H3");
+                authorName.innerHTML = pub;
+                displayNews.appendChild(authorName);
+
+            }
         })
-        console.log(stockname);
-    }
+}
