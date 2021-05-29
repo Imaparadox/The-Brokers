@@ -15,6 +15,10 @@ var searchStock = function (event) {
 
     // get value from input search
     stockname = stockInputEl.value.trim();
+    var name = $('#stock').attr('name');
+
+    //local storage 
+    localStorage.setItem(name, stockname);
 
     if (stockname) {
         getStockInfo(stockname);
