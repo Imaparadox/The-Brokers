@@ -68,9 +68,10 @@ function getNews() {
             // DISPLAY 4 NEW ARTICLES
             for (var i = 0; i < 4; i++) {
                 var displayNews = document.getElementById('news');
+
                 // Author of Article
                 var pub = data.results[i].author;
-                var authorName = document.createElement("H3");
+                var authorName = document.createElement("h4");
                 authorName.innerHTML = pub;
 
                 // Article description
@@ -80,10 +81,17 @@ function getNews() {
                 var trimmedString = descrip.substring(0, length);
                 descripDetail.innerHTML = trimmedString;
 
+                //Article Image
+                var forImg = data.results[i].image_url;
+                var forImgEl = document.createElement("img");
+                forImgEl.setAttribute("src", forImg);
+                forImgEl.setAttribute("width", "304");
+                forImgEl.setAttribute("height", "228");
 
                 // append each variable
                 displayNews.appendChild(authorName);
                 displayNews.appendChild(descripDetail);
+                displayNews.appendChild(forImgEl);
             }
         })
 }
