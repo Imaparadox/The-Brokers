@@ -12,12 +12,15 @@ modalEl2.style.display = "none";
 
 $(document).ready(function () {
 
+    // when page first loads all stored user inputs display as buttons
+
     // when button is clicked
     $('.btn').click(function () {
 
         // get value from input search
-        stockname = stockInputEl.value.trim();
+        stockname = $('#stock').val().toUpperCase();
         var name = $('#stock').attr('name');
+        console.log(stockname);
 
         //local storage 
         localStorage.setItem(name, stockname);
@@ -28,7 +31,6 @@ $(document).ready(function () {
         } else {
             modal1.style.display = "block";
         }
-        // console.log(event);
 
         return false
     });
@@ -52,10 +54,6 @@ var getStockInfo = function (userStock) {
     })
     console.log(stockname);
 }
-
-// Click event listener
-// userFormEl.addEventListener("submit", searchStock);
-
 
 // variable that will grab today's date to display recent news articles
 var todayDate = new Date().toJSON().slice(0, 10);
