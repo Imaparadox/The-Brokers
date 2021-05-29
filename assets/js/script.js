@@ -16,23 +16,33 @@ $(document).ready(function () {
 
     keys = Object.keys(localStorage);
     for (i=0; i < keys.length; i++) {
-        // $('#stock-container').append(keys);
-        $('#stock-container').append('<button type="submit" id="' + keys + '" value="' + keys + '" class="btn" >' + keys[i] + '</button>');
+        // append stock ticker to buttons
+        $('#stock-container').append('<button type="submit" id="' + keys[i] + '" value="' + keys[i] + '" class="btn" >' + keys[i] + '</button>');
     };
     
-    // when button is clicked
-    $('.btn').click(function () {
+    // button click
+    // grab id value and push that to stockname
+
+    
+    $('#stock-input').click(function () {
 
         // get value from input search
         stockname = $('#stock').val().toUpperCase();
         var name = $('#stock').attr('name');
         console.log(stockname);
+        
+        // do not store null values
+        if (!stockname) {
+            return false
+        }
 
+        // do not store repeat stock tickers
+        
         //local storage 
         localStorage.setItem(stockname, "");
         
         //create button for searched stock
-
+        $('#stock-container').append('<button type="submit" id="' + stockname + '" value="' + stockname + '" class="btn" >' + stockname + '</button>');
 
         if (stockname) {
             getStockInfo(stockname);
