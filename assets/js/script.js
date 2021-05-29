@@ -10,24 +10,30 @@ var stockname;
 modalEl1.style.display = "none";
 modalEl2.style.display = "none";
 
-var searchStock = function (event) {
-    event.preventDefault();
+$(document).ready(function () {
 
-    // get value from input search
-    stockname = stockInputEl.value.trim();
-    var name = $('#stock').attr('name');
+    // when button is clicked
+    $('.btn').click(function () {
 
-    //local storage 
-    localStorage.setItem(name, stockname);
+        // get value from input search
+        stockname = stockInputEl.value.trim();
+        var name = $('#stock').attr('name');
 
-    if (stockname) {
-        getStockInfo(stockname);
-        stockInputEl.value = "";
-    } else {
-        modal1.style.display = "block";
-    }
-    console.log(event);
-}
+        //local storage 
+        localStorage.setItem(name, stockname);
+
+        if (stockname) {
+            getStockInfo(stockname);
+            stockInputEl.value = "";
+        } else {
+            modal1.style.display = "block";
+        }
+        // console.log(event);
+
+        return false
+    });
+
+});
 
 var getStockInfo = function (userStock) {
 
@@ -48,7 +54,7 @@ var getStockInfo = function (userStock) {
 }
 
 // Click event listener
-userFormEl.addEventListener("submit", searchStock);
+// userFormEl.addEventListener("submit", searchStock);
 
 
 // variable that will grab today's date to display recent news articles
