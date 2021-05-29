@@ -10,11 +10,19 @@
     --tertiary-color: #fff176;
     --quaternary-color: #e0e0e0;
     --quinary-color: #424242 ;
+    --senary-color: #212121;
 }
   
 html {
     scroll-padding: 150px;
-  }
+}
+
+body {
+    background-color: var(--quaternary-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+
+}
 
 header {
     padding: 20px 25px;  
@@ -26,13 +34,29 @@ header {
     position: sticky;
     top: 0;
     z-index: 999;
+    border-bottom: 2.5px solid black;
 }
 
 h1 {
     display: inline;
+    text-shadow: 1.5px 1px var(--senary-color);
 }
+/* 
+footer {
+    background: #39a6b2;
+    width: 100%;
+    padding: 40px 35px; 
+    text-align: center;
+    border-top: 2px solid black;;
+} */
 
 .nav-wrapper {
     background-color: var(--primary-color);
     border: none;
 }
+
+.nav-wrapper ul li a {
+    font-size: 18px;
+    text-shadow: 1.5px 1px var(--senary-color);
+}
+
