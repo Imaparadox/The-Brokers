@@ -26,7 +26,6 @@ $(document).ready(function () {
         var stockname = $(this).attr('value');
 
         getStockInfo(stockname);
-        getNews(stockname);
 
     });
 
@@ -79,7 +78,7 @@ var getStockInfo = function (userStock) {
         } else {
             modal2.style.display = "block";
         }
-        getNews();
+        getNews(userStock);
     })
     
 }
