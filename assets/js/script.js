@@ -80,8 +80,8 @@ function getNews() {
 
                 // Author of Article
                 var pub = data.results[i].author;
-                var authorName = document.createElement("h4");
-                authorName.innerHTML = pub;
+                var authName = document.createElement("h4");
+                authName.innerHTML = pub;
 
                 // Article description
                 var descrip = data.results[i].description;
@@ -94,8 +94,8 @@ function getNews() {
                 var forImg = data.results[i].image_url;
                 var forImgEl = document.createElement("img");
                 forImgEl.setAttribute("src", forImg);
-                forImgEl.setAttribute("width", "304");
-                forImgEl.setAttribute("height", "228");
+                forImgEl.setAttribute("width", "400");
+                forImgEl.setAttribute("height", "200");
 
                 //Onclick of article, open article on seperate tab
                 var artc = data.results[i].article_url;
@@ -104,7 +104,7 @@ function getNews() {
                 artcLink.setAttribute("target", "_blank");
 
                 // wrap <a href> around <h3> <p> and <img> tags
-                artcLink.appendChild(authorName);
+                artcLink.appendChild(authName);
                 artcLink.appendChild(descripDetail);
                 artcLink.appendChild(forImgEl);
 
