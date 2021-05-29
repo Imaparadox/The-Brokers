@@ -6,7 +6,7 @@ var stockInputEl = document.querySelector("#stock");
 var modalEl1 = document.querySelector("#modal1");
 var modalEl2 = document.querySelector("#modal2");
 var userFormEl = document.querySelector("#user-form");
-var stockname;
+// var stockname;
 modalEl1.style.display = "none";
 modalEl2.style.display = "none";
 
@@ -14,23 +14,52 @@ $(document).ready(function () {
 
     // when page first loads all stored user inputs display as buttons
 
-    // when button is clicked
-    $('.btn').click(function () {
+    keys = Object.keys(localStorage);
+    for (i=0; i < keys.length; i++) {
+        // append stock ticker to buttons
+        $('#stock-container').append('<button type="submit" id="' + keys[i] + '" value="' + keys[i] + '" class="btn btn-stored" >' + keys[i] + '</button>');
+    };
+    
+    // button click for stored stock tickers
+    $('.btn-stored').click(function () {
+        // find stock ticker 
+        var stockname = $(this).attr('value');
+
+        getStockInfo(stockname);
+        getNews(stockname);
+
+    });
+
+    // grab id value and push that to stockname
+
+    
+    $('#stock-input').click(function () {
+
+        keys = Object.keys(localStorage);
 
         // get value from input search
         stockname = $('#stock').val().toUpperCase();
-        var name = $('#stock').attr('name');
         console.log(stockname);
-
-        //local storage 
-        localStorage.setItem(name, stockname);
-
-        if (stockname) {
-            getStockInfo(stockname);
-            stockInputEl.value = "";
-        } else {
+        
+        // do not store null values
+        if (!stockname) {
             modal1.style.display = "block";
-        }
+            return false
+        };
+        
+        //create button for unique searched stock
+        var checkKeys = jQuery.inArray( stockname, keys);
+
+        // unique value < 0 , repeat value > 0
+        if (checkKeys < 0) {
+            
+            //local storage 
+            localStorage.setItem(stockname, "");
+
+            $('#stock-container').append('<button type="submit" id="' + stockname + '" value="' + stockname + '" class="btn btn-stored" >' + stockname + '</button>');
+        };
+
+        getStockInfo(stockname);
 
         return false
     });
@@ -52,7 +81,7 @@ var getStockInfo = function (userStock) {
         }
         getNews();
     })
-    console.log(stockname);
+    
 }
 
 // variable that will grab today's date to display recent news articles
@@ -60,7 +89,7 @@ var todayDate = new Date().toJSON().slice(0, 10);
 console.log(todayDate);
 
 // API FETCH REQUEST FOR NEWS ARTICLES RELATED TO USER STOCK
-function getNews() {
+function getNews(stockname) {
     var apiPoly = "6GrCrAyGOSpscsyzmo4hVcfw6OJse4D1";
     fetch(
         'https://api.polygon.io/v2/reference/news?limit=10&order=descending&sort=published_utc&ticker=' + stockname + '&published_utc.gte=' + todayDate + '&apiKey=' + apiPoly
