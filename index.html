@@ -23,7 +23,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#stock-search">Search Stocks</a></li>
                     <li><a href="#user-search">Your Stocks</a></li>
-                    <li><a href="#stock-charts">Stock Charts</a></li>
+                    <li><a href="#stock-info">Stock Information</a></li>
                     <li><a href="#stock-news">Stock News</a></li>
                 </ul>
             </div>
@@ -31,7 +31,7 @@
         <div class="grey darken-3">
             <div class="container">
                 <!-- Changed to div to not have as many list items outside of nav-->
-                <div class="stock-header"></div>
+                <ul class="stock-header"></ul>
             </div>
         </div>
     </header>
@@ -70,7 +70,7 @@
                 <!-- Stock Information from user input -->
                 <div class="col m9 stock-info-container">
                     <div class="card">
-                        <div id="stock-charts">
+                        <div id="stock-info">
                             <h2>Stock Info</h2>
                             <!-- <iframe src="https://www.investing.com/equities/united-states" title="Yahoo finance Trending Tickers" frameborder="0"></iframe> -->
                         </div>
@@ -79,7 +79,7 @@
             </div>
             <!-- News Information -->
             <div class="row">
-                <h2>News Container</h2>
+                <h2 id="stock-news">News Container</h2>
                 <div class="news-container-0 col s6 " id="news"></div>
                 <div class="news-container-1 col s6 " id="news"></div>
                 <div class="news-container-2 col s6 " id="news"></div>

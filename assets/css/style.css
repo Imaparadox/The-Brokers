@@ -14,7 +14,14 @@
   
 html {
     scroll-padding: 150px;
-  }
+}
+
+body {
+    background-color: var(--quaternary-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+
+}
 
 header {
     padding: 20px 25px;  
@@ -26,6 +33,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 999;
+    border-bottom: 2.5px solid black;
 }
 
 h1 {
