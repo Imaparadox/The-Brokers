@@ -69,6 +69,7 @@ function getNews() {
             for (var i = 0; i < 4; i++) {
                 var displayNews = document.querySelector(".news-container-" + i);
 
+
                 // Author of Article
                 var pub = data.results[i].author;
                 var authorName = document.createElement("h4");
@@ -93,16 +94,13 @@ function getNews() {
                 var artcLink = document.createElement("a");
                 artcLink.setAttribute("href", artc);
                 artcLink.setAttribute("target", "_blank");
-                
+
                 // wrap <a href> around <h3> <p> and <img> tags
                 artcLink.appendChild(authorName);
                 artcLink.appendChild(descripDetail);
                 artcLink.appendChild(forImgEl);
 
                 // append each variable
-                displayNews.appendChild(authorName);
-                displayNews.appendChild(descripDetail);
-                displayNews.appendChild(forImgEl);
                 displayNews.appendChild(artcLink);
             }
         })
