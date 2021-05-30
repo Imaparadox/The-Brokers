@@ -143,23 +143,24 @@ function getNews() {
             console.log(stockname);
 
             // DISPLAY 4 NEW ARTICLES
-            for (var i = 0; i < 4; i++) {
+            for (var i = 0; i < 5; i++) {
                 var displayNews = document.querySelector(".news-container-" + i);
 
 
-                // Author of Article
+                // Title of Article
                 var pub = data.results[i].title;
-                var authName = document.createElement("h4");
+                var authName = document.createElement("h5");
                 authName.classList.add("card-title");
+                $(".card-title").css("color", "#424242")
                 authName.innerHTML = pub;
 
                 // Article description
                 var descrip = data.results[i].description;
                 var descripDetail = document.createElement("p");
-                var length = 150;
+                var length = 125;
                 var trimmedString = descrip.substring(0, length);
-                descripDetail.classList.add("card-content");
                 descripDetail.innerHTML = trimmedString;
+                descripDetail.classList.add("card-content");
 
                 //Article Image
                 var forImg = data.results[i].image_url;
@@ -167,6 +168,7 @@ function getNews() {
                 forImgEl.setAttribute("src", forImg);
                 forImgEl.setAttribute("width", "350");
                 forImgEl.setAttribute("height", "200");
+                //create div to hold image for card styling
                 var testImg = document.createElement("div");
                 testImg.classList.add("card-image");
                 testImg.appendChild(forImgEl);
