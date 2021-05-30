@@ -126,7 +126,6 @@ var getStockInfo = function () {
 
 // variable that will grab today's date to display recent news articles
 var todayDate = new Date().toJSON().slice(0, 10);
-console.log(todayDate);
 
 // API FETCH REQUEST FOR NEWS ARTICLES RELATED TO USER STOCK
 function getNews() {
@@ -138,14 +137,12 @@ function getNews() {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
             //VERIFY STOCKNAME IS GRABBED
             console.log(stockname);
 
             // DISPLAY 4 NEW ARTICLES
             for (var i = 0; i < 5; i++) {
                 var displayNews = document.querySelector(".news-container-" + i);
-
 
                 // Title of Article
                 var pub = data.results[i].title;
