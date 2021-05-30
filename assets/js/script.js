@@ -144,6 +144,7 @@ function getNews() {
             for (var i = 0; i < 5; i++) {
                 var displayNews = document.querySelector(".news-container-" + i);
 
+
                 // Title of Article
                 var pub = data.results[i].title;
                 var authName = document.createElement("h5");
