@@ -63,6 +63,7 @@ var getStockInfo = function () {
                 displayStock.appendChild(stockTitleEl);
                
                 var stockInfoEl = document.createElement("div");
+
                 // Loop over the last 10 hours for stock info
                 for (var i = 0; i < 10; i++) {
 
@@ -83,7 +84,7 @@ var getStockInfo = function () {
                     closeEl.textContent = "Close Price:  " + data.values[i].close;
                     stockInfoEl.appendChild(closeEl);
 
-                    
+                    // append all the stock info into the display stock div 
                     displayStock.appendChild(stockInfoEl);
                 }       
                 });
