@@ -14,23 +14,51 @@ $(document).ready(function () {
 
     // when page first loads all stored user inputs display as buttons
 
-    // when button is clicked
-    $('.btn').click(function () {
+    keys = Object.keys(localStorage);
+    for (i = 0; i < keys.length; i++) {
+        // append stock ticker to buttons
+        $('#stock-container').append('<button type="submit" id="' + keys[i] + '" value="' + keys[i] + '" class="btn btn-stored" >' + keys[i] + '</button>');
+    };
+
+    // button click for stored stock tickers
+    $('.btn-stored').click(function () {
+        // find stock ticker 
+        var stockname = $(this).attr('value');
+
+        getStockInfo(stockname);
+
+    });
+
+    // grab id value and push that to stockname
+
+
+    $('#stock-input').click(function () {
+
+        keys = Object.keys(localStorage);
 
         // get value from input search
         stockname = $('#stock').val().toUpperCase();
-        var name = $('#stock').attr('name');
         console.log(stockname);
 
-        //local storage 
-        localStorage.setItem(name, stockname);
-
-        if (stockname) {
-            getStockInfo(stockname);
-            stockInputEl.value = "";
-        } else {
+        // do not store null values
+        if (!stockname) {
             modal1.style.display = "block";
-        }
+            return false
+        };
+
+        //create button for unique searched stock
+        var checkKeys = jQuery.inArray(stockname, keys);
+
+        // unique value < 0 , repeat value > 0
+        if (checkKeys < 0) {
+
+            //local storage 
+            localStorage.setItem(stockname, "");
+
+            $('#stock-container').append('<button type="submit" id="' + stockname + '" value="' + stockname + '" class="btn btn-stored" >' + stockname + '</button>');
+        };
+
+        getStockInfo(stockname);
 
         return false
     });
@@ -91,9 +119,9 @@ var getStockInfo = function () {
         } else {
             modal2.style.display = "block";
         }
-        getNews();
+        getNews(userStock);
     })
-    console.log(stockname);
+
 }
 
 // variable that will grab today's date to display recent news articles
@@ -104,7 +132,7 @@ console.log(todayDate);
 function getNews() {
     var apiPoly = "6GrCrAyGOSpscsyzmo4hVcfw6OJse4D1";
     fetch(
-        'https://api.polygon.io/v2/reference/news?limit=10&order=descending&sort=published_utc&ticker=' + stockname + '&published_utc.gte=' + todayDate + '&apiKey=' + apiPoly
+        'https://api.polygon.io/v2/reference/news?limit=10&order=descending&sort=published_utc&ticker=' + stockname + '&published_utc.lte=' + todayDate + '&apiKey=' + apiPoly
     )
         .then(function (response) {
             return response.json();
@@ -135,7 +163,7 @@ function getNews() {
                 var forImg = data.results[i].image_url;
                 var forImgEl = document.createElement("img");
                 forImgEl.setAttribute("src", forImg);
-                forImgEl.setAttribute("width", "400");
+                forImgEl.setAttribute("width", "350");
                 forImgEl.setAttribute("height", "200");
 
                 //Onclick of article, open article on seperate tab
@@ -153,4 +181,4 @@ function getNews() {
                 displayNews.appendChild(artcLink);
             }
         })
-}
+};

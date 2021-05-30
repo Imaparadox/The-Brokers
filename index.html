@@ -48,7 +48,7 @@
                         <form id="user-form" class="card-body">
                             <label class="form-label" for="stock">Stock</label>
                             <input name="stock" id="stock" type="text" autofocus="true" class="form-input" />
-                            <button type="submit" class="btn">Search</button>
+                            <button id=stock-input type="submit" class="btn">Search</button>
                         </form>
                     </div>
 
@@ -81,18 +81,20 @@
             <!-- News Information -->
             <div class="row">
                 <h2 id="stock-news">News Container</h2>
-                <div class="news-container-0 col s6 " id="news"></div>
-                <div class="news-container-1 col s6 " id="news"></div>
-                <div class="news-container-2 col s6 " id="news"></div>
-                <div class="news-container-3 col s6 " id="news"></div>
+                <div class="news-container-0 col s12 m6" id="news"></div>
+                <div class="news-container-1 col s12 m6" id="news"></div>
+                </div>
+                <div class="row">
+                <div class="news-container-3 col s12 m6" id="news"></div>
+                <div class="news-container-2 col s12 m6" id="news"></div>
             </div>
         </div>
     </main>
 
     <!-- Can make changes in the future with footer -->
-    <footer>
+    <!-- <footer>
         <h4>Contact Us:</h4>
-        <!-- Just copy the line below and change the href link to include your github name! -->
+        Just copy the line below and change the href link to include your github name!
         <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
         <br>
         <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
@@ -102,6 +104,34 @@
         <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
         <br>
         <p>The Brokers, Copyright &copy; 2021</p>
+    </footer> -->
+
+    <footer id="footer" class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">About</h5>
+                    <p class="grey-text text-lighten-5">This webpage is a project for the Rutgers Coding Bootcamp. Each
+                        student did their part in making this webpage what it is today. If you like what you see, feel
+                        free to check out our personal GitHubs provided to the right!</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Contact Us:</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-5" href="https://github.com/Imaparadox"
+                                target="_blank">Stephen Marsh</a></li>
+                        <li><a class="grey-text text-lighten-5" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-5" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-5" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                The Brokers, Copyright &copy; 2021
+            </div>
+        </div>
     </footer>
 
     <!-- JQuery Library Link -->
