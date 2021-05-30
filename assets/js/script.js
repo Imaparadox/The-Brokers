@@ -180,7 +180,7 @@ function getNews() {
                 artcLink.setAttribute("href", artc);
                 artcLink.setAttribute("target", "_blank");
 
-                // wrap <a href> around <h3> <p> and <img> tags
+                // wrap <a href> around <h5> <p> and <img> tags
                 artcLink.appendChild(authName);
                 artcLink.appendChild(testImg);
                 artcLink.appendChild(descripDetail);
