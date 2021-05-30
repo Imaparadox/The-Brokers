@@ -119,14 +119,13 @@ var getStockInfo = function () {
         } else {
             modal2.style.display = "block";
         }
-        getNews(userStock);
+        getNews();
     })
 
 }
 
 // variable that will grab today's date to display recent news articles
 var todayDate = new Date().toJSON().slice(0, 10);
-console.log(todayDate);
 
 // API FETCH REQUEST FOR NEWS ARTICLES RELATED TO USER STOCK
 function getNews() {
@@ -138,26 +137,31 @@ function getNews() {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
             //VERIFY STOCKNAME IS GRABBED
             console.log(stockname);
 
             // DISPLAY 4 NEW ARTICLES
-            for (var i = 0; i < 4; i++) {
+            for (var i = 0; i < 5; i++) {
                 var displayNews = document.querySelector(".news-container-" + i);
 
 
-                // Author of Article
-                var pub = data.results[i].author;
-                var authName = document.createElement("h4");
+                // Title of Article
+                var pub = data.results[i].title;
+                var authName = document.createElement("h5");
+                authName.classList.add("card-title");
+                // article title text color
+                $(".card-title").css("color", "#424242")
                 authName.innerHTML = pub;
 
                 // Article description
                 var descrip = data.results[i].description;
                 var descripDetail = document.createElement("p");
-                var length = 150;
+                var length = 125;
                 var trimmedString = descrip.substring(0, length);
                 descripDetail.innerHTML = trimmedString;
+                descripDetail.classList.add("card-content");
+                // article descriotion text color
+                $(".card-content").css("color", "#212121");
 
                 //Article Image
                 var forImg = data.results[i].image_url;
@@ -165,6 +169,10 @@ function getNews() {
                 forImgEl.setAttribute("src", forImg);
                 forImgEl.setAttribute("width", "350");
                 forImgEl.setAttribute("height", "200");
+                //create div to hold image for card styling
+                var testImg = document.createElement("div");
+                testImg.classList.add("card-image");
+                testImg.appendChild(forImgEl);
 
                 //Onclick of article, open article on seperate tab
                 var artc = data.results[i].article_url;
@@ -174,8 +182,8 @@ function getNews() {
 
                 // wrap <a href> around <h3> <p> and <img> tags
                 artcLink.appendChild(authName);
+                artcLink.appendChild(testImg);
                 artcLink.appendChild(descripDetail);
-                artcLink.appendChild(forImgEl);
 
                 // append each variable
                 displayNews.appendChild(artcLink);
