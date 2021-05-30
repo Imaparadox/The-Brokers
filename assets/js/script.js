@@ -151,6 +151,7 @@ function getNews() {
                 var pub = data.results[i].title;
                 var authName = document.createElement("h5");
                 authName.classList.add("card-title");
+                // article title text color
                 $(".card-title").css("color", "#424242")
                 authName.innerHTML = pub;
 
@@ -161,6 +162,8 @@ function getNews() {
                 var trimmedString = descrip.substring(0, length);
                 descripDetail.innerHTML = trimmedString;
                 descripDetail.classList.add("card-content");
+                // article descriotion text color
+                $(".card-content").css("color", "#212121");
 
                 //Article Image
                 var forImg = data.results[i].image_url;
