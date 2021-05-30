@@ -6,7 +6,7 @@ var stockInputEl = document.querySelector("#stock");
 var modalEl1 = document.querySelector("#modal1");
 var modalEl2 = document.querySelector("#modal2");
 var userFormEl = document.querySelector("#user-form");
-// var stockname;
+var stockname;
 modalEl1.style.display = "none";
 modalEl2.style.display = "none";
 
@@ -15,11 +15,11 @@ $(document).ready(function () {
     // when page first loads all stored user inputs display as buttons
 
     keys = Object.keys(localStorage);
-    for (i=0; i < keys.length; i++) {
+    for (i = 0; i < keys.length; i++) {
         // append stock ticker to buttons
         $('#stock-container').append('<button type="submit" id="' + keys[i] + '" value="' + keys[i] + '" class="btn btn-stored" >' + keys[i] + '</button>');
     };
-    
+
     // button click for stored stock tickers
     $('.btn-stored').click(function () {
         // find stock ticker 
@@ -31,7 +31,7 @@ $(document).ready(function () {
 
     // grab id value and push that to stockname
 
-    
+
     $('#stock-input').click(function () {
 
         keys = Object.keys(localStorage);
@@ -39,19 +39,19 @@ $(document).ready(function () {
         // get value from input search
         stockname = $('#stock').val().toUpperCase();
         console.log(stockname);
-        
+
         // do not store null values
         if (!stockname) {
             modal1.style.display = "block";
             return false
         };
-        
+
         //create button for unique searched stock
-        var checkKeys = jQuery.inArray( stockname, keys);
+        var checkKeys = jQuery.inArray(stockname, keys);
 
         // unique value < 0 , repeat value > 0
         if (checkKeys < 0) {
-            
+
             //local storage 
             localStorage.setItem(stockname, "");
 
@@ -80,7 +80,7 @@ var getStockInfo = function (userStock) {
         }
         getNews(userStock);
     })
-    
+
 }
 
 // variable that will grab today's date to display recent news articles
@@ -88,10 +88,10 @@ var todayDate = new Date().toJSON().slice(0, 10);
 console.log(todayDate);
 
 // API FETCH REQUEST FOR NEWS ARTICLES RELATED TO USER STOCK
-function getNews(stockname) {
+function getNews() {
     var apiPoly = "6GrCrAyGOSpscsyzmo4hVcfw6OJse4D1";
     fetch(
-        'https://api.polygon.io/v2/reference/news?limit=10&order=descending&sort=published_utc&ticker=' + stockname + '&published_utc.gte=' + todayDate + '&apiKey=' + apiPoly
+        'https://api.polygon.io/v2/reference/news?limit=10&order=descending&sort=published_utc&ticker=' + stockname + '&published_utc.lte=' + todayDate + '&apiKey=' + apiPoly
     )
         .then(function (response) {
             return response.json();
@@ -122,7 +122,7 @@ function getNews(stockname) {
                 var forImg = data.results[i].image_url;
                 var forImgEl = document.createElement("img");
                 forImgEl.setAttribute("src", forImg);
-                forImgEl.setAttribute("width", "400");
+                forImgEl.setAttribute("width", "350");
                 forImgEl.setAttribute("height", "200");
 
                 //Onclick of article, open article on seperate tab
@@ -140,4 +140,4 @@ function getNews(stockname) {
                 displayNews.appendChild(artcLink);
             }
         })
-}
+};
