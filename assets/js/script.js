@@ -119,7 +119,7 @@ var getStockInfo = function () {
         } else {
             modal2.style.display = "block";
         }
-        getNews(userStock);
+        getNews();
     })
 
 }
@@ -148,8 +148,9 @@ function getNews() {
 
 
                 // Author of Article
-                var pub = data.results[i].author;
+                var pub = data.results[i].title;
                 var authName = document.createElement("h4");
+                authName.classList.add("card-title");
                 authName.innerHTML = pub;
 
                 // Article description
@@ -157,6 +158,7 @@ function getNews() {
                 var descripDetail = document.createElement("p");
                 var length = 150;
                 var trimmedString = descrip.substring(0, length);
+                descripDetail.classList.add("card-content");
                 descripDetail.innerHTML = trimmedString;
 
                 //Article Image
@@ -165,6 +167,9 @@ function getNews() {
                 forImgEl.setAttribute("src", forImg);
                 forImgEl.setAttribute("width", "350");
                 forImgEl.setAttribute("height", "200");
+                var testImg = document.createElement("div");
+                testImg.classList.add("card-image");
+                testImg.appendChild(forImgEl);
 
                 //Onclick of article, open article on seperate tab
                 var artc = data.results[i].article_url;
@@ -174,8 +179,8 @@ function getNews() {
 
                 // wrap <a href> around <h3> <p> and <img> tags
                 artcLink.appendChild(authName);
+                artcLink.appendChild(testImg);
                 artcLink.appendChild(descripDetail);
-                artcLink.appendChild(forImgEl);
 
                 // append each variable
                 displayNews.appendChild(artcLink);
