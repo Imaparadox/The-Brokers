@@ -61,26 +61,12 @@ h1 {
     text-shadow: 1.5px 1px var(--senary-color);
 }
 
-#footer {
-    padding: 5px 10px;  
-    background-color: var(--primary-color);
-    border-top: 2.5px solid black;
+/* Stock search styling  */
+.stock-search-card {
+
 }
 
-#footer h5 {
-    /* display: inline; */
-    text-shadow: 1.5px 1px var(--senary-color);
-}
-
-#footer ul li a, #footer p{
-    font-size: 16px;
-    text-shadow: 1px 1px var(--senary-color);
-}
-
-.footer-copyright {
-    text-align: center;
-}
-
+/* Stock info styling */
 #stock-info {
     background-image: url("../images/stockimage.jpeg")
 }
@@ -102,4 +88,24 @@ h1 {
 
 .card-content{
     color: var(--senary-color);
+}
+
+#footer {
+    padding: 5px 10px;  
+    background-color: var(--primary-color);
+    border-top: 2.5px solid black;
+}
+
+#footer h5 {
+    /* display: inline; */
+    text-shadow: 1.5px 1px var(--senary-color);
+}
+
+#footer ul li a, #footer p{
+    font-size: 16px;
+    text-shadow: 1px 1px var(--senary-color);
+}
+
+.footer-copyright {
+    text-align: center;
 }
