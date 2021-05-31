@@ -6,7 +6,7 @@ var stockInputEl = document.querySelector("#stock");
 var modalEl1 = document.querySelector("#modal1");
 var modalEl2 = document.querySelector("#modal2");
 var userFormEl = document.querySelector("#user-form");
-var stockname;
+var stockname; 
 modalEl1.style.display = "none";
 modalEl2.style.display = "none";
 

@@ -69,8 +69,19 @@ h1 {
 }
 
 .stock-search-card h3 {
+    font-size: 40px;
+    /* white-space: nowrap; */
+} 
 
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+    color: #000;
 }
+/* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
 
 /* Stock info styling */
 #stock-info {
