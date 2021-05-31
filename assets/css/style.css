@@ -94,3 +94,12 @@ h1 {
 
 .list-item span:nth-child(even){
     background-color: green}
+
+/* Styling for news cards */
+.card-title{
+    color: var(--senary-color);
+}
+
+.card-content{
+    color: var(--senary-color);
+}
