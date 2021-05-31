@@ -131,37 +131,39 @@ var todayDate = new Date().toJSON().slice(0, 10);
 function getNews() {
     var apiPoly = "6GrCrAyGOSpscsyzmo4hVcfw6OJse4D1";
     fetch(
-        'https://api.polygon.io/v2/reference/news?limit=10&order=descending&sort=published_utc&ticker=' + stockname + '&published_utc.lt=' + todayDate + '&apiKey=' + apiPoly
+        'https://api.polygon.io/v2/reference/news?limit=10&order=descending&sort=published_utc&ticker=' + stockname + '&published_utc.lte=' + todayDate + '&apiKey=' + apiPoly
     )
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            //VERIFY STOCKNAME IS GRABBED
-            console.log(stockname);
-
             // DISPLAY 4 NEW ARTICLES
             for (var i = 0; i < 4; i++) {
+
                 var displayNews = document.querySelector(".news-container-" + i);
+                //display cards only on click
                 displayNews.classList.add("card", "medium");
 
                 // Title of Article
                 var pub = data.results[i].title;
                 var authName = document.createElement("h5");
                 authName.classList.add("card-title");
-                // article title text color
-                $(".card-title").css("color", "#424242")
                 authName.innerHTML = pub;
 
                 // Article description
                 var descrip = data.results[i].description;
-                var descripDetail = document.createElement("p");
-                var length = 125;
-                var trimmedString = descrip.substring(0, length);
-                descripDetail.innerHTML = trimmedString;
-                descripDetail.classList.add("card-content");
-                // article descriotion text color
-                $(".card-content").css("color", "#212121");
+                // verifies description of article exists, if not then display sample text, else display description contents
+                if (descrip == null){
+                    var descripDetail = document.createElement("p");
+                    descripDetail.classList.add("card-content");
+                    descripDetail.innerHTML="Click here to read more!";
+                }else{
+                    var descripDetail = document.createElement("p");
+                    var length = 125;
+                    var trimmedString = descrip.substring(0, length);
+                    descripDetail.classList.add("card-content");
+                    descripDetail.innerHTML = trimmedString;
+                }
 
                 //Article Image
                 var forImg = data.results[i].image_url;
