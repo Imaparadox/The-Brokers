@@ -6,7 +6,7 @@ var stockInputEl = document.querySelector("#stock");
 var modalEl1 = document.querySelector("#modal1");
 var modalEl2 = document.querySelector("#modal2");
 var userFormEl = document.querySelector("#user-form");
-var stockname;
+var stockname; 
 modalEl1.style.display = "none";
 modalEl2.style.display = "none";
 
@@ -17,7 +17,7 @@ $(document).ready(function () {
     keys = Object.keys(localStorage);
     for (i = 0; i < keys.length; i++) {
         // append stock ticker to buttons
-        $('#stock-container').append('<button type="submit" id="' + keys[i] + '" value="' + keys[i] + '" class="btn btn-stored" >' + keys[i] + '</button>');
+        $('#stock-container').append('<button type="submit" id="' + keys[i] + '" value="' + keys[i] + '" class="btn btn-stored yellow lighten-2 grey-text text-darken-4" >' + keys[i] + '</button>');
     };
 
     // button click for stored stock tickers
