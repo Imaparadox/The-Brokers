@@ -14,6 +14,124 @@
 </head>
 
 <body>
+    <header>
+        <!-- <h1 class="grey-text text-lighten-5">The Brokers 📈</h1> -->
+        <nav class="z-depth-0">
+            <div class="nav-wrapper">
+                <h1 class="grey-text text-lighten-5">The Brokers 📈</h1>
+                <!-- <div class="nav-wrapper "> -->
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#stock-search">Search Stocks</a></li>
+                    <li><a href="#user-search">Your Stocks</a></li>
+                    <li><a href="#stock-info">Stock Information</a></li>
+                    <li><a href="#stock-news">Stock News</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="grey darken-3">
+            <div class="container">
+                <!-- Changed to div to not have as many list items outside of nav-->
+                <ul class="stock-header"></ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- start of main section -->
+    <main>
+        <div class="container">
+            <!-- Search button and stock display container -->
+            <div id="stock-search" class="row">
+                <!-- Search Button -->
+                <div class="col m3">
+                    <div class="card">
+                        <h3 class="card-header text-uppercase">Stock Search:</h3>
+                        <form id="user-form" class="card-body">
+                            <label class="form-label" for="stock">Stock</label>
+                            <input name="stock" id="stock" type="text" autofocus="true" class="form-input" />
+                            <button id=stock-input type="submit" class="btn">Search</button>
+                        </form>
+                    </div>
+
+                    <div id="modal1" class="modal">
+                        <p>Enter A Stock Symbol</p>
+                    </div>
+
+                    <div id="modal2" class="modal">
+                        <p>Enter A Required Stock Ticker</p>
+                    </div>
+
+                    <!-- Stock display container (local storage for user inputs) -->
+                    <div id="stock-container">
+                        <h2 id="user-search">User Local Storage</h2>
+                        <div class="stored-stocks"></div>
+                    </div>
+
+                </div>
+                <!-- Stock Information from user input -->
+                <div class="col m9 stock-info-container">
+                    <div class="card">
+                        <div id="stock-info">
+                            <!-- <iframe src="https://www.investing.com/equities/united-states" title="Yahoo finance Trending Tickers" frameborder="0"></iframe> -->
+                            <ul class="stock-results"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Information -->
+            <div class="row">
+                <h2 id="stock-news">News Container</h2>
+                <div class="news-container-0 col s12 m6" id="news"></div>
+                <div class="news-container-1 col s12 m6" id="news"></div>
+                <div class="news-container-2 col s12 m6" id="news"></div>
+                <div class="news-container-3 col s12 m6" id="news"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Can make changes in the future with footer -->
+    <!-- <footer>
+        <h4>Contact Us:</h4>
+        Just copy the line below and change the href link to include your github name!
+        <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
+        <br>
+        <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
+        <br>
+        <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
+        <br>
+        <a href="https://github.com/Imaparadox" target="_blank">Stephen Marsh</a>
+        <br>
+        <p>The Brokers, Copyright &copy; 2021</p>
+    </footer> -->
+
+    <footer id="footer" class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">About</h5>
+                    <p class="grey-text text-lighten-5">This webpage is a project for the Rutgers Coding Bootcamp. Each
+                        student did their part in making this webpage what it is today. If you like what you see, feel
+                        free to check out our personal GitHubs provided to the right!</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Contact Us:</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-5" href="https://github.com/Imaparadox"
+                                target="_blank">Stephen Marsh</a></li>
+                        <li><a class="grey-text text-lighten-5" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-5" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-5" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                The Brokers, Copyright &copy; 2021
+            </div>
+        </div>
+    </footer>
 
     <!-- JQuery Library Link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
