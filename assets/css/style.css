@@ -81,3 +81,16 @@ h1 {
     text-align: center;
 }
 
+#stock-info {
+    background-image: url("../images/stockimage.jpeg")
+}
+
+#stock-info h3, h5 {
+    color: honeydew;
+}
+
+.list-item span:nth-child(odd){
+    background-color:red}
+
+.list-item span:nth-child(even){
+    background-color: green}
