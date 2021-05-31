@@ -48,7 +48,7 @@
                         <form id="user-form" class="card-body">
                             <label class="form-label" for="stock">Stock</label>
                             <input name="stock" id="stock" type="text" autofocus="true" class="form-input" />
-                            <button type="submit" class="btn">Search</button>
+                            <button id=stock-input type="submit" class="btn">Search</button>
                         </form>
                     </div>
 
@@ -71,21 +71,22 @@
                 <div class="col m9 stock-info-container">
                     <div class="card">
                         <div id="stock-info">
-                            <h2>Stock Info</h2>
                             <!-- <iframe src="https://www.investing.com/equities/united-states" title="Yahoo finance Trending Tickers" frameborder="0"></iframe> -->
                             <ul class="stock-results"></ul>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- News Information -->
             <div class="row">
                 <h2 id="stock-news">News Container</h2>
-                <div class="news-container-0 col s6 " id="news"></div>
-                <div class="news-container-1 col s6 " id="news"></div>
-                <div class="news-container-2 col s6 " id="news"></div>
-                <div class="news-container-3 col s6 " id="news"></div>
+                <div class="news-container-0 col s12 m6" id="news"></div>
+                <div class="news-container-1 col s12 m6" id="news"></div>
+                <div class="news-container-2 col s12 m6" id="news"></div>
+                <div class="news-container-3 col s12 m6" id="news"></div>
             </div>
+
         </div>
     </main>
 
