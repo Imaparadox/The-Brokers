@@ -131,7 +131,7 @@ var todayDate = new Date().toJSON().slice(0, 10);
 function getNews() {
     var apiPoly = "6GrCrAyGOSpscsyzmo4hVcfw6OJse4D1";
     fetch(
-        'https://api.polygon.io/v2/reference/news?limit=10&order=descending&sort=published_utc&ticker=' + stockname + '&published_utc.lte=' + todayDate + '&apiKey=' + apiPoly
+        'https://api.polygon.io/v2/reference/news?limit=10&order=descending&sort=published_utc&ticker=' + stockname + '&published_utc.lt=' + todayDate + '&apiKey=' + apiPoly
     )
         .then(function (response) {
             return response.json();
@@ -141,9 +141,9 @@ function getNews() {
             console.log(stockname);
 
             // DISPLAY 4 NEW ARTICLES
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < 4; i++) {
                 var displayNews = document.querySelector(".news-container-" + i);
-
+                displayNews.classList.add("card", "medium");
 
                 // Title of Article
                 var pub = data.results[i].title;
