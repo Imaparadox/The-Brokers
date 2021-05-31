@@ -42,6 +42,7 @@ h1 {
     text-shadow: 1.5px 1px var(--senary-color);
 }
 
+
 /* footer {
     padding: 20px 25px;  
     background-color: var(--primary-color);
@@ -59,6 +60,59 @@ h1 {
 .nav-wrapper ul li a {
     font-size: 18px;
     text-shadow: 1.5px 1px var(--senary-color);
+}
+
+/* Stock search styling  */
+.stock-search-card {
+    /* display: inline; */
+
+}
+
+.stock-search-card h2, .stock-container h2 {
+    font-size: 40px;
+    /* white-space: nowrap; */
+} 
+
+/* #stock:focus {
+    outline: none;
+    border-bottom: none;
+} */
+.user-search {
+
+}
+
+/* .stored-stocks {
+
+}
+
+.btn-stored {
+    padding: 10px;
+    margin: 5.5px auto;
+    z-index: auto;
+} */
+
+/* Stock info styling */
+#stock-info {
+    background-image: url("../images/stockimage.jpeg")
+}
+
+#stock-info h3, h5 {
+    color: honeydew;
+}
+ 
+.list-item span:nth-child(odd){
+    background-color:red}
+
+.list-item span:nth-child(even){
+    background-color: green}
+
+/* Styling for news cards */
+.card-title{
+    color: var(--senary-color);
+}
+
+.card-content{
+    color: var(--senary-color);
 }
 
 #footer {
@@ -81,25 +135,7 @@ h1 {
     text-align: center;
 }
 
-#stock-info {
-    background-image: url("../images/stockimage.jpeg")
-}
-
-#stock-info h3, h5 {
-    color: honeydew;
-}
-
-.list-item span:nth-child(odd){
-    background-color:red}
-
-.list-item span:nth-child(even){
-    background-color: green}
-
-/* Styling for news cards */
-.card-title{
-    color: var(--senary-color);
-}
-
-.card-content{
-    color: var(--senary-color);
-}
+/* We should use this to hide unnecessary sections before the user clicks search */
+/* .hide {
+    display: none;
+} */
