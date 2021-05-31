@@ -74,42 +74,42 @@ var getStockInfo = function () {
         if (response.ok) {
             response.json().then(function (data) {
                 console.log(data);
-                
+
+                // Stock Info Div Element to Display Stock Info
+                var displayStock = document.querySelector("#stock-info");                
+
                 // Display Stock Symbol in Title
-                var stockTitleEl = document.createElement("h3");
-                var sym = document.createElement("span");
-                sym.textContent = "Stock:  " + data.meta.symbol+ "           ";
-                stockTitleEl.appendChild(sym);            
+                var sym = document.createElement("h3");
+                sym.textContent = "Stock:  " + data.meta.symbol;
+                displayStock.appendChild(sym);            
 
                 // Display Currency type in Title
-                curr = document.createElement("span");
+                curr = document.createElement("h5");
                 curr.textContent = "Currency:  " + data.meta.currency;
-                stockTitleEl.appendChild(curr);
-
-                // Append Title into Stock Info Div
-                var displayStock = document.querySelector("#stock-info");
-                displayStock.appendChild(stockTitleEl);
-               
-                var stockInfoEl = document.createElement("div");
+                displayStock.appendChild(curr);
+                
 
                 // Loop over the last 10 hours for stock info
                 for (var i = 0; i < 10; i++) {
 
+                    var stockInfoEl = document.createElement("div");
                     stockInfoEl.classList = "list-item justify-space-between center-align card-panel hoverable";
-
+                    
                     // display date and time for stock info
-                    var dateTimeEl = document.createElement("span");
+                    var dateTimeEl = document.createElement("div");
                     dateTimeEl.textContent = data.values[i].datetime + "                ";
                     stockInfoEl.appendChild(dateTimeEl);
 
                     //display Open Price of Stock for time block
                     var openEl = document.createElement("span");
-                    openEl.textContent = "Open Price:  " + data.values[i].open + "               ";
+                    var openPrice = data.values[i].open;
+                    openEl.textContent = "Open Price:  $" + parseFloat(openPrice).toFixed(2) + "               ";
                     stockInfoEl.appendChild(openEl);
 
                     //display Close Price of Stock for time block
                     var closeEl = document.createElement("span");
-                    closeEl.textContent = "Close Price:  " + data.values[i].close;
+                    var closePrice = data.values[i].close;
+                    closeEl.textContent = "Close Price:  $" + parseFloat(closePrice).toFixed(2) + "               ";
                     stockInfoEl.appendChild(closeEl);
 
                     // append all the stock info into the display stock div 
