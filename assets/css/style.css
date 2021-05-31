@@ -73,15 +73,11 @@ h1 {
     /* white-space: nowrap; */
 } 
 
- /* label focus color */
- .input-field input[type=text]:focus + label {
-    color: #000;
+#stock:focus {
+    outline: none;
+    border-bottom: none;
+
 }
-/* label underline focus color */
-  .input-field input[type=text]:focus {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
-  }
 
 /* Stock info styling */
 #stock-info {
@@ -128,6 +124,6 @@ h1 {
 }
 
 /* We should use this to hide unnecessary sections before the user clicks search */
-.hide {
+/* .hide {
     display: none;
-}
+} */

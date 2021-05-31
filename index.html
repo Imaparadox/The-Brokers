@@ -44,10 +44,11 @@
                 <!-- Search Button -->
                 <div class="col m3">
                     <div class="card stock-search-card ">
+                        <!-- <div class="input-field"></div> -->
                         <h3 class="card-header text-uppercase light-blue lighten-3">Stock Search:</h3>
                         <form id="user-form" class="card-body">
                             <label class="form-label grey-text text-darken-4" for="stock">Stock</label>
-                            <input name="stock" id="stock" type="text" autofocus="true" class="form-input stock-search-input validate" />
+                            <input name="stock" id="stock" type="text" autofocus="true" class="form-input stock-search-input" />
                             <button id=stock-input type="submit" class="btn yellow lighten-2 grey-text text-darken-4">Search</button>
                         </form>
                     </div>
@@ -61,8 +62,8 @@
                     </div>
 
                     <!-- Stock display container (local storage for user inputs) -->
-                    <div id="stock-container">
-                        <h2 id="user-search">User Local Storage</h2>
+                    <div id="stock-container" class="card">
+                        <h2 id="user-search" class="card-header text-uppercase light-blue lighten-3">Your Stocks</h2>
                         <div class="stored-stocks"></div>
                     </div>
 
@@ -80,7 +81,7 @@
 
             <!-- News Information -->
             <div class="row">
-                <h2 id="stock-news">News Container</h2>
+                <h2 id="stock-news"></h2>
                 <div class="news-container-0 col s12 m6" id="news"></div>
                 <div class="news-container-1 col s12 m6" id="news"></div>
                 <div class="news-container-2 col s12 m6" id="news"></div>
