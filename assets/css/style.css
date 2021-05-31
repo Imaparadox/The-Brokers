@@ -42,6 +42,7 @@ h1 {
     text-shadow: 1.5px 1px var(--senary-color);
 }
 
+
 /* footer {
     padding: 20px 25px;  
     background-color: var(--primary-color);
@@ -63,6 +64,11 @@ h1 {
 
 /* Stock search styling  */
 .stock-search-card {
+    /* display: inline; */
+
+}
+
+.stock-search-card h3 {
 
 }
 
@@ -74,7 +80,7 @@ h1 {
 #stock-info h3, h5 {
     color: honeydew;
 }
-
+ 
 .list-item span:nth-child(odd){
     background-color:red}
 
@@ -108,4 +114,9 @@ h1 {
 
 .footer-copyright {
     text-align: center;
+}
+
+/* We should use this to hide unnecessary sections before the user clicks search */
+.hide {
+    display: none;
 }
