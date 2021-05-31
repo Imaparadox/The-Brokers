@@ -68,16 +68,28 @@ h1 {
 
 }
 
-.stock-search-card h3 {
+.stock-search-card h2, .stock-container h2 {
     font-size: 40px;
     /* white-space: nowrap; */
 } 
 
-#stock:focus {
+/* #stock:focus {
     outline: none;
     border-bottom: none;
+} */
+.user-search {
 
 }
+
+/* .stored-stocks {
+
+}
+
+.btn-stored {
+    padding: 10px;
+    margin: 5.5px auto;
+    z-index: auto;
+} */
 
 /* Stock info styling */
 #stock-info {
