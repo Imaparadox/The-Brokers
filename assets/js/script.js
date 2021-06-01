@@ -17,7 +17,7 @@ $(document).ready(function () {
     keys = Object.keys(localStorage);
     for (i = 0; i < keys.length; i++) {
         // append stock ticker to buttons
-        $('#stock-container').append('<button type="submit" id="' + keys[i] + '" value="' + keys[i] + '" class="btn btn-stored yellow lighten-2 grey-text text-darken-4" >' + keys[i] + '</button>');
+        $('#stock-container').append('<button type="submit" id="' + keys[i] + '" value="' + keys[i] + '" class="btn btn-stored teal accent-4 grey-text text-darken-4" >' + keys[i] + '</button>');
     };
 
     // button click for stored stock tickers
