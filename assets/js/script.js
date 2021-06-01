@@ -6,7 +6,7 @@ var stockInputEl = document.querySelector("#stock");
 var modalEl1 = document.querySelector("#modal1");
 var modalEl2 = document.querySelector("#modal2");
 var userFormEl = document.querySelector("#user-form");
-var stockname; 
+// var stockname; 
 modalEl1.style.display = "none";
 modalEl2.style.display = "none";
 
@@ -76,7 +76,8 @@ var getStockInfo = function (stockname) {
                 console.log(data);
 
                 // Stock Info Div Element to Display Stock Info
-                var displayStock = document.querySelector("#stock-info");                
+                var displayStock = document.querySelector("#stock-info");  
+                $("#stock-info").empty();              
 
                 // Display Stock Symbol in Title
                 var sym = document.createElement("h3");
@@ -119,7 +120,7 @@ var getStockInfo = function (stockname) {
         } else {
             modal2.style.display = "block";
         }
-        getNews();
+        getNews(stockname);
     })
 
 }
@@ -128,7 +129,7 @@ var getStockInfo = function (stockname) {
 var todayDate = new Date().toJSON().slice(0, 10);
 
 // API FETCH REQUEST FOR NEWS ARTICLES RELATED TO USER STOCK
-function getNews() {
+function getNews(stockname) {
     var apiPoly = "6GrCrAyGOSpscsyzmo4hVcfw6OJse4D1";
     fetch(
         'https://api.polygon.io/v2/reference/news?limit=10&order=descending&sort=published_utc&ticker=' + stockname + '&published_utc.lte=' + todayDate + '&apiKey=' + apiPoly
