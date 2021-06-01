@@ -141,6 +141,7 @@ function getNews() {
             for (var i = 0; i < 4; i++) {
 
                 var displayNews = document.querySelector(".news-container-" + i);
+                $(".news-container-" + i).empty();
                 //display cards only on click
                 displayNews.classList.add("card", "medium");
 
