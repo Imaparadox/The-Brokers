@@ -82,11 +82,13 @@ var getStockInfo = function (stockname) {
                 // Display Stock Symbol in Title
                 var sym = document.createElement("h3");
                 sym.textContent = "Stock:  " + data.meta.symbol;
+                sym.classList.add("card-title", "stock-info-title", "text-uppercase", "light-blue", "lighten-3", "grey-text", "text-darken-4");
                 displayStock.appendChild(sym);            
 
                 // Display Currency type in Title
                 curr = document.createElement("h5");
                 curr.textContent = "Currency:  " + data.meta.currency;
+                curr.classList.add("card-title", "stock-info-title", "text-uppercase", "light-blue", "lighten-3", "grey-text", "text-darken-4");
                 displayStock.appendChild(curr);
                 
 

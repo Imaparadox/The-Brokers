@@ -101,6 +101,7 @@ h1 {
     z-index: auto;
 } */
 
+
 /* Stock info styling */
 #stock-info {
     background-image: url("../images/stockimage.jpeg")
@@ -108,6 +109,8 @@ h1 {
 
 #stock-info h3, h5 {
     color: honeydew;
+    text-align: center;
+    font-size: 40px;
 }
  
 .list-item span:nth-child(odd){
