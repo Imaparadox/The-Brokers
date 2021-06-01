@@ -42,16 +42,7 @@ h1 {
     text-shadow: 1.5px 1px var(--senary-color);
 }
 
-
-/* footer {
-    padding: 20px 25px;  
-    background-color: var(--primary-color);
-     width: 100%;
-    padding: 40px 35px; 
-    text-align: center;
-    border-top: 2px solid black;
-}  */
-
+/* Nav styling */
 .nav-wrapper {
     background-color: var(--primary-color);
     border: none;
@@ -114,10 +105,12 @@ h1 {
 }
  
 .list-item span:nth-child(odd){
-    background-color:red}
+    background-color:red
+}
 
 .list-item span:nth-child(even){
-    background-color: green}
+    background-color: green
+}
 
 /* Styling for news cards */
 .card-title{
@@ -128,10 +121,16 @@ h1 {
     color: var(--senary-color);
 }
 
+/* Styling for footer */
 #footer {
     padding: 5px 10px;  
     background-color: var(--primary-color);
     border-top: 2.5px solid black;
+   /* Added to fix footer positioning */
+    position: fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
 }
 
 #footer h5 {
