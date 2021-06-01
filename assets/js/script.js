@@ -152,7 +152,9 @@ function getNews(stockname) {
                 var pub = data.results[i].title;
                 var authName = document.createElement("h5");
                 authName.classList.add("card-title", "text-uppercase", "light-blue", "lighten-3");
-                authName.innerHTML = pub;
+                var titleLength = 80;
+                var trimmedArt=pub.substring(0, titleLength);
+                authName.innerHTML = trimmedArt + "...";
 
                 // Article description
                 var descrip = data.results[i].description;
