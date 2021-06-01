@@ -17,7 +17,7 @@ $(document).ready(function () {
     keys = Object.keys(localStorage);
     for (i = 0; i < keys.length; i++) {
         // append stock ticker to buttons
-        $('#stock-container').append('<button type="submit" id="' + keys[i] + '" value="' + keys[i] + '" class="btn btn-stored teal accent-4 grey-text text-darken-4" >' + keys[i] + '</button>');
+        $('#stock-container .stored-stocks').append('<button type="submit" id="' + keys[i] + '" value="' + keys[i] + '" class="btn btn-stored teal accent-4 grey-text text-darken-4" >' + keys[i] + '</button>');
     };
 
     // button click for stored stock tickers
@@ -82,11 +82,13 @@ var getStockInfo = function (stockname) {
                 // Display Stock Symbol in Title
                 var sym = document.createElement("h3");
                 sym.textContent = "Stock:  " + data.meta.symbol;
+                sym.classList.add("card-title", "stock-info-title", "text-uppercase", "light-blue", "lighten-3", "grey-text", "text-darken-4");
                 displayStock.appendChild(sym);            
 
                 // Display Currency type in Title
                 curr = document.createElement("h5");
                 curr.textContent = "Currency:  " + data.meta.currency;
+                curr.classList.add("card-title", "stock-info-title", "text-uppercase", "light-blue", "lighten-3", "grey-text", "text-darken-4");
                 displayStock.appendChild(curr);
                 
 
@@ -150,7 +152,9 @@ function getNews(stockname) {
                 var pub = data.results[i].title;
                 var authName = document.createElement("h5");
                 authName.classList.add("card-title", "text-uppercase", "light-blue", "lighten-3");
-                authName.innerHTML = pub;
+                var titleLength = 80;
+                var trimmedArt=pub.substring(0, titleLength);
+                authName.innerHTML = trimmedArt + "...";
 
                 // Article description
                 var descrip = data.results[i].description;
