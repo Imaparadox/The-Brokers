@@ -48,8 +48,10 @@
                         <h2 class="card-header text-uppercase light-blue lighten-3">Stock Search:</h2>
                         <form id="user-form" class="card-body">
                             <label class="form-label grey-text text-darken-4" for="stock">Stock</label>
-                            <input name="stock" id="stock" type="text" autofocus="true" class="form-input stock-search-input" />
-                            <button id=stock-input type="submit" class="btn yellow lighten-2 grey-text text-darken-4">Search</button>
+                            <input name="stock" id="stock" type="text" autofocus="true"
+                                class="form-input stock-search-input" />
+                            <button id=stock-input type="submit"
+                                class="btn yellow lighten-2 grey-text text-darken-4">Search</button>
                         </form>
                     </div>
 
@@ -62,7 +64,8 @@
                     </div>
 
                     <!-- Stock display container (local storage for user inputs) -->
-                    <div id="stock-container" class="card stock-container">
+                    <div id="stock-container" class="card justify-content-space-betweengit status
+                     stock-container">
                         <h2 id="user-search" class="card-header text-uppercase light-blue lighten-3">Your Stocks:</h2>
                         <div class="stored-stocks"></div>
                     </div>
@@ -80,7 +83,7 @@
             </div>
 
             <!-- News Information -->
-            <div class="row">
+            <div id="stock-news" class="row">
                 <!-- I don't think we need the h2 in the HTML. We should maybe do that in the JS -->
                 <!-- <h2 id="stock-news"></h2> -->
                 <div class="news-container-0 col s12 m6" id="news"></div>
