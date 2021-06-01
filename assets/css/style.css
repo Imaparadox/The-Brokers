@@ -24,6 +24,10 @@ body {
 
 }
 
+main {
+    min-height: calc(90vh - 285px);
+}
+
 header {
     padding: 20px 25px;  
     background-color: var(--primary-color);
@@ -82,15 +86,18 @@ h1 {
 
 }
 
-/* .stored-stocks {
-
+ .stored-stocks {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
 }
 
 .btn-stored {
     padding: 10px;
     margin: 5.5px auto;
     z-index: auto;
-} */
+    text-align: start;
+} 
 
 
 /* Stock info styling */
@@ -123,14 +130,14 @@ h1 {
 
 /* Styling for footer */
 #footer {
-    padding: 5px 10px;  
+    padding: 5px;  
     background-color: var(--primary-color);
     border-top: 2.5px solid black;
    /* Added to fix footer positioning */
-    position: fixed;
+    /* position: fixed;
     left:0px;
     bottom:0px;
-    width:100%;
+    width:100%; */
 }
 
 #footer h5 {
