@@ -65,7 +65,7 @@ $(document).ready(function () {
 
 });
 
-var getStockInfo = function () {
+var getStockInfo = function (stockname) {
 
     // stcok api function fetch
     var apiKey = "28c7003db6dc4105bd96e1de1fe13c21";
