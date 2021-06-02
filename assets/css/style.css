@@ -161,4 +161,6 @@ h1 {
 
 #news:hover{
     filter: brightness(120%);
+    border: 2px solid teal;
+    border-radius: 15px;
 }
