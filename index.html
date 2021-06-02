@@ -14,17 +14,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
     <link rel="manifest" href="./site.webmanifest">
-
+    <!-- Title -->
     <title>The Brokers</title>
 </head>
 
 <body>
+    <!-- Start of header section -->
     <header>
-        <!-- <h1 class="grey-text text-lighten-5">The Brokers 📈</h1> -->
+        <!-- Nav bar for user-friendly navigation -->
         <nav class="z-depth-0">
             <div class="nav-wrapper">
                 <h1 class="grey-text text-lighten-5">The Brokers 📈</h1>
-                <!-- <div class="nav-wrapper "> -->
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#stock-search">Search Stocks</a></li>
                     <li><a href="#user-search">Your Stocks</a></li>
@@ -33,9 +33,10 @@
                 </ul>
             </div>
         </nav>
+
+        <!-- Will use this at a later date to create ticker which will display selected stock info under nav bar -->
         <div class="grey darken-3">
             <div class="container">
-                <!-- Changed to div to not have as many list items outside of nav-->
                 <ul class="stock-header"></ul>
             </div>
         </div>
@@ -60,6 +61,7 @@
                         </form>
                     </div>
 
+                    <!-- Modals -->
                     <div id="modal1" class="modal">
                         <p>Enter A Stock Symbol</p>
                     </div>
@@ -79,7 +81,6 @@
                 <div class="col m9 stock-info-container">
                     <div class="card">
                         <div id="stock-info">
-                            <!-- <iframe src="https://www.investing.com/equities/united-states" title="Yahoo finance Trending Tickers" frameborder="0"></iframe> -->
                             <ul class="stock-results"></ul>
                         </div>
                     </div>
@@ -88,8 +89,7 @@
 
             <!-- News Information -->
             <div id="stock-news" class="row">
-                <!-- I don't think we need the h2 in the HTML. We should maybe do that in the JS -->
-                <!-- <h2 id="stock-news"></h2> -->
+                <!-- We should append an h2 in script.js -->
                 <div class="news-container-0 col s12 m6" id="news"></div>
                 <div class="news-container-1 col s12 m6" id="news"></div>
                 <div class="news-container-2 col s12 m6" id="news"></div>
@@ -98,8 +98,11 @@
 
         </div>
     </main>
+
+    <!-- Start of footer -->
     <footer id="footer" class="page-footer">
         <div class="container">
+            <!-- About us -->
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">About</h5>
@@ -107,6 +110,8 @@
                         student did their part in making this webpage what it is today. If you like what you see, feel
                         free to check out our personal GitHubs provided to the right!</p>
                 </div>
+
+                <!-- Contact Us -->
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Contact Us:</h5>
                     <ul>
@@ -125,6 +130,8 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Copyright -->
         <div class="footer-copyright">
             <div class="container">
                 The Brokers, Copyright &copy; 2021
