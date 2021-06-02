@@ -57,33 +57,23 @@ h1 {
     text-shadow: 1.5px 1px var(--senary-color);
 }
 
- /* label focus color */
- .stock-search-input input[type=text]:focus + label {
+
+/* .stock-search-input input[type=text]:focus + label {
     color: #000;
 }
-/* label underline focus color */
+
 .stock-search-input input[type=text]:focus {
     border-bottom: 1px solid #000;
     box-shadow: 0 1px 0 0 #000;
-  }
+} */
 
 /* Stock search styling  */
-.stock-search-card {
-    /* display: inline; */
-
-}
-
 .stock-search-card h2, .stock-container h2 {
     font-size: 40px;
     /* white-space: nowrap; */
 } 
 
-/* #stock:focus {
-    outline: none;
-    border-bottom: none;
-} */
-
- .stored-stocks {
+.stored-stocks {
     display: flex;
     flex-direction: column;
     /* align-items: flex-start; */
@@ -151,15 +141,9 @@ h1 {
     padding: 5px;  
     background-color: var(--primary-color);
     border-top: 2.5px solid black;
-   /* Added to fix footer positioning */
-    /* position: fixed;
-    left:0px;
-    bottom:0px;
-    width:100%; */
 }
 
 #footer h5 {
-    /* display: inline; */
     text-shadow: 1.5px 1px var(--senary-color);
 }
 
@@ -177,6 +161,7 @@ h1 {
     display: none;
 } */
 
+/* News Section Hover */
 #news:hover{
     filter: brightness(120%);
     border: 2px solid teal;
