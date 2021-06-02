@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1976d2;
+    --secondary-color: #81d4fa;
+    --tertiary-color: #fff176;
+    --quaternary-color: #e0e0e0;
+    --quinary-color: #424242 ;
+    --senary-color: #212121;
+}
+  
+html {
+    scroll-padding: 150px;
+}
+
+body {
+    background-color: var(--quaternary-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
+
+}
+
+main {
+    min-height: calc(90vh - 285px);
+}
+
+header {
+    padding: 20px 25px;  
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 2.5px solid black;
+}
+
+h1 {
+    display: inline;
+    text-shadow: 1.5px 1px var(--senary-color);
+}
+
+/* Nav styling */
+.nav-wrapper {
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.nav-wrapper ul li a {
+    font-size: 18px;
+    text-shadow: 1.5px 1px var(--senary-color);
+}
+
+ /* label focus color */
+ .stock-search-input input[type=text]:focus + label {
+    color: #000;
+}
+/* label underline focus color */
+.stock-search-input input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+
+/* Stock search styling  */
+.stock-search-card {
+    /* display: inline; */
+
+}
+
+.stock-search-card h2, .stock-container h2 {
+    font-size: 40px;
+    /* white-space: nowrap; */
+} 
+
+/* #stock:focus {
+    outline: none;
+    border-bottom: none;
+} */
+
+ .stored-stocks {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+}
+
+.btn-stored {
+    padding: 10px;
+    margin: 5.5px auto;
+    z-index: auto;
+    text-align: start;
+} 
+
+
+/* Stock info styling */
+#stock-info {
+    background-image: url("../images/stockimage.jpeg")
+}
+
+#stock-info h3, h5 {
+    text-align: center;
+    font-size: 40px;
+}
+ 
+.list-item span:nth-child(odd){
+    background-color:red
+}
+
+.list-item:hover {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.list-item span:nth-child(even){
+    background-color: green
+}
+
+.list-item:hover{
+    filter: brightness(120%);
+    border: 2px solid teal;
+    border-radius: 5px;
+}
+
+#stock-info h5:hover {
+    filter: brightness(120%);
+    border: 2px solid teal;
+}
+
+#stock-info h3:hover {
+    filter: brightness(120%);
+    border: 2px solid teal;
+}
+
+/* Styling for news cards */
+.card-title{
+    color: var(--senary-color);
+}
+
+.card-content{
+    color: var(--senary-color);
+}
+
+/* Styling for footer */
+#footer {
+    padding: 5px;  
+    background-color: var(--primary-color);
+    border-top: 2.5px solid black;
+   /* Added to fix footer positioning */
+    /* position: fixed;
+    left:0px;
+    bottom:0px;
+    width:100%; */
+}
+
+#footer h5 {
+    /* display: inline; */
+    text-shadow: 1.5px 1px var(--senary-color);
+}
+
+#footer ul li a, #footer p{
+    font-size: 16px;
+    text-shadow: 1px 1px var(--senary-color);
+}
+
+.footer-copyright {
+    text-align: center;
+}
+
+/* We should use this to hide unnecessary sections before the user clicks search */
+/* .hide {
+    display: none;
+} */
+
+#news:hover{
+    filter: brightness(120%);
+    border: 2px solid teal;
+    border-radius: 15px;
+}

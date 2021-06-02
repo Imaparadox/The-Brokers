@@ -1,25 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link to style sheet -->
-    <link rel="stylesheet" href="./assets/css/style.css"/>
-    <!-- Materialize CSS, Bootstrap alternative, we can pick another style too, just using as placehodler -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Materialize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Stock Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
 
-    <title>Document</title>
+    <title>The Brokers</title>
 </head>
 
 <body>
+    <header>
+        <!-- <h1 class="grey-text text-lighten-5">The Brokers 📈</h1> -->
+        <nav class="z-depth-0">
+            <div class="nav-wrapper">
+                <h1 class="grey-text text-lighten-5">The Brokers 📈</h1>
+                <!-- <div class="nav-wrapper "> -->
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#stock-search">Search Stocks</a></li>
+                    <li><a href="#user-search">Your Stocks</a></li>
+                    <li><a href="#stock-info">Stock Information</a></li>
+                    <li><a href="#stock-news">Stock News</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="grey darken-3">
+            <div class="container">
+                <!-- Changed to div to not have as many list items outside of nav-->
+                <ul class="stock-header"></ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- start of main section -->
+    <main>
+        <div class="container">
+            <!-- Search button and stock display container -->
+            <div id="stock-search" class="row">
+                <!-- Search Button -->
+                <div class="col m3">
+                    <div class="card stock-search-card ">
+                        <!-- <div class="input-field"></div> -->
+                        <h2 class="card-header text-uppercase light-blue lighten-3">Stock Search:</h2>
+                        <form id="user-form" class="card-body">
+                            <label class="form-label grey-text text-darken-4" for="stock">Stock</label>
+                            <input name="stock" id="stock" type="text" autofocus="true"
+                                class="form-input stock-search-input" />
+                            <button id=stock-input type="submit"
+                                class="btn teal accent-4 grey-text text-darken-4">Search</button>
+                        </form>
+                    </div>
+
+                    <div id="modal1" class="modal">
+                        <p>Enter A Stock Symbol</p>
+                    </div>
+
+                    <div id="modal2" class="modal">
+                        <p>Enter A Required Stock Ticker</p>
+                    </div>
+
+                    <!-- Stock display container (local storage for user inputs) -->
+                    <div id="stock-container" class="card stock-container">
+                        <h2 id="user-search" class="card-header text-uppercase light-blue lighten-3">Your Stocks:</h2>
+                        <div class="stored-stocks"></div>
+                    </div>
+
+                </div>
+                <!-- Stock Information from user input -->
+                <div class="col m9 stock-info-container">
+                    <div class="card">
+                        <div id="stock-info">
+                            <!-- <iframe src="https://www.investing.com/equities/united-states" title="Yahoo finance Trending Tickers" frameborder="0"></iframe> -->
+                            <ul class="stock-results"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Information -->
+            <div id="stock-news" class="row">
+                <!-- I don't think we need the h2 in the HTML. We should maybe do that in the JS -->
+                <!-- <h2 id="stock-news"></h2> -->
+                <div class="news-container-0 col s12 m6" id="news"></div>
+                <div class="news-container-1 col s12 m6" id="news"></div>
+                <div class="news-container-2 col s12 m6" id="news"></div>
+                <div class="news-container-3 col s12 m6" id="news"></div>
+            </div>
+
+        </div>
+    </main>
+    <footer id="footer" class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">About</h5>
+                    <p class="grey-text text-lighten-5">This webpage is a project for the Rutgers Coding Bootcamp. Each
+                        student did their part in making this webpage what it is today. If you like what you see, feel
+                        free to check out our personal GitHubs provided to the right!</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Contact Us:</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-5" href="https://github.com/Imaparadox"
+                                target="_blank">Stephen Marsh</a></li>
+                        <br>
+                        <li><a class="grey-text text-lighten-5" href="https://github.com/maa-hub" target="_blank">Maame
+                                Konadu Assasie Gyimah</a></li>
+                        <br>
+                        <li><a class="grey-text text-lighten-5" href="https://github.com/DiSantoz" target="_blank">David
+                                Ferreira</a></li>
+                        <br>
+                        <li><a class="grey-text text-lighten-5" href="https://github.com/stephgeorge22"
+                                target="_blank">Stephanie George</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                The Brokers, Copyright &copy; 2021
+            </div>
+        </div>
+    </footer>
 
     <!-- JQuery Library Link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Materialize JavaScript File, just place holder, if we find another one 
-    Like Bootstrap, it uses both CSS and JS links-->
+    <!-- Materialize JavaScript Link-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Link to script file -->
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
