@@ -56,6 +56,16 @@ $(document).ready(function () {
             localStorage.setItem(stockname, "");
 
             $('#stock-container').append('<button type="submit" id="' + stockname + '" value="' + stockname + '" class="btn btn-stored" >' + stockname + '</button>');
+        
+
+            // button click for stored stock tickers
+            $('.btn-stored').click(function () {
+                // find stock ticker 
+                var stockname = $(this).attr('value');
+
+                getStockInfo(stockname);
+
+             });
         };
 
         getStockInfo(stockname);
