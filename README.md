@@ -10,21 +10,24 @@ A group of four young developers created an application that allows the user to 
 
 We wanted to create an applcation that will allow prospective investors to have all the tools readily available to make their own informed stock investment decisions. 
 
-Checkout [THE BROKERS!]:chart_with_upwards_trend:(https://imaparadox.github.io/The-Brokers/)
+Checkout [THE BROKERS!:chart_with_upwards_trend:](https://imaparadox.github.io/The-Brokers/)
 
-## Table of Contents (Optional)
-
-If your README is very long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents 
 
 * [Process](#process)
-* [Usage](#usage)
+* [Technologies Used](#technologies)
 * [Credits](#credits)
 * [License](#license)
 
 
-## Process
+## Technologies Used
 
-We used a variety of 
+* JavaScript
+* JQuery
+* Materalize
+* Twelve Data API
+* Polygon.io API
+* Favicon
 
 
 ## Usage 
