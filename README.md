@@ -2,34 +2,29 @@
 
 ## Description 
 
-Your GitHub profile is an extremely important aspect of your public identity as a developer. A well-crafted one allows you to show off your work to other developers as well as potential employers. An important component of your GitHub profile—and one that many new developers often overlook—is the README.md file.
+Interest in stocks has gain mainstream popularity recently thanks to the subreddit WallStreetBets, the scandal circulating around Robinhood,  and the uncertainty of market volatility. Stocks have peaked the interests of both young and old inexperienced but curious investors. We offer a solution with simplicity in mind. 
 
-The quality of a README often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase what your application does, justify the technologies used, and even talk about some of the challenges you faced and features you hope to implement in the future. A good README helps you stand out among the large crowd of developers putting their work on GitHub.
+We are not financial advisors, we are The Brokers. 
 
-There's no one right way to structure a good README. There is one very wrong way, however, and that is to not include a README at all or to create a very anemic one. This guide outlines a few best practices. As you progress in your career, you will develop your own ideas about what makes a good README.
+A group of four young developers created an application that allows the user to gain instant information regarding a stock with relevant news information. We believe the user should have all the available information in one simple application to make their own informed financial decision. 
 
-At a minimum, your project README needs a title and a short description explaining the what, why, and how. What was your motivation? Why did you build this project? (Note: The answer is not "Because it was a homework assignment.") What problem does it solve? What did you learn? What makes your project stand out? 
+We wanted to create an applcation that will allow prospective investors to have all the tools readily available to make their own informed stock investment decisions. 
 
-Lastly, if your project is deployed, include a link to the deployed application here.
-
-If you're new to Markdown, read the GitHub guide on [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
-
-If you need an example of a good README, check out [the VSCode repository](https://github.com/microsoft/vscode).
-
+Checkout [THE BROKERS!]:chart_with_upwards_trend:(https://imaparadox.github.io/The-Brokers/)
 
 ## Table of Contents (Optional)
 
 If your README is very long, add a table of contents to make it easy for users to find what they need.
 
-* [Installation](#installation)
+* [Process](#process)
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
 
 
-## Installation
+## Process
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+We used a variety of 
 
 
 ## Usage 
