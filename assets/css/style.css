@@ -167,3 +167,35 @@ h1 {
     border: 2px solid teal;
     border-radius: 15px;
 }
+
+/* Smaller desktop screens  */
+@media screen and (max-width: 980px) {
+    header {
+            /* padding-bottom: 0;
+            justify-content: center; */
+            width: 100%;
+      }
+  }
+
+/* Tablets and smaller*/
+@media screen and (max-width: 768px) {
+    .contact-me-info ul li a {
+        font-size: 17px;
+    }
+}
+  
+  /* Mobile phones*/
+@media screen and (max-width: 575px) {
+    header {
+       width: 100%;
+        /* padding: 15px 10px; */
+    }
+}
+
+/* iPhones */
+@media screen and (max-width: 375px) {
+    h1 {
+       width: 100%;
+       font-size: 15px;
+    }
+}
