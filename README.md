@@ -88,10 +88,10 @@ Finally, at the bottom of our application, you will find a small section dedicat
 
 ![GitHub contributors](https://img.shields.io/github/contributors/Imaparadox/The-Brokers?style=for-the-badge)
 
-*[Stephen Marsh](https://github.com/Imaparadox)
-*[Maame Konadu Assasie Gyimah](https://github.com/maa-hub)
-*[David Ferreira](https://github.com/DiSantoz)
-*[Stephanie George](https://github.com/stephgeorge22)
+* [Stephen Marsh](https://github.com/Imaparadox)
+* [Maame Konadu Assasie Gyimah](https://github.com/maa-hub)
+* [David Ferreira](https://github.com/DiSantoz)
+* [Stephanie George](https://github.com/stephgeorge22)
 
 
 
@@ -99,7 +99,7 @@ Finally, at the bottom of our application, you will find a small section dedicat
 
 MIT License
 
-© 2021 The Brokers Inc. Confidential and Proprietary. All Rights Reserved.
+© 2021 The Brokers Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
