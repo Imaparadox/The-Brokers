@@ -32,51 +32,61 @@ Checkout [THE BROKERS!:chart_with_upwards_trend:](https://imaparadox.github.io/T
 
 ## Usage 
 
-When you first website you are presented with a simple layout where you can search for any Stock you'd like:
+When you first website you are presented with a simple layout where you can search for any stock you'd like:
+
 
 ![alt text](./assets/images/start.png "Quickly search for a stock!")
 
-Upon entering the stock ticker you will be shown relevant stock information, as well as prior opening and closing prices of the stock in one hour intervals:
 
-![alt text](./assets/images/start.png "Snapshot of opening and closing prices of stock by the hour!")
+Upon entering the stock ticker, you will be shown relevant stock information, as well as prior opening and closing prices of the stock in one-hour intervals:
+
+
+![alt text](./assets/images/stock.png "Snapshot of opening and closing prices of stock by the hour!")
+
 
 Hovering over a stock price will make the text pop out and allow for easier readability
 
+
 ![alt text](./assets/images/hover.png "Move your mouse cursor over the stock to make the text pop!")
+
 
 By simply using the navigation bar on top of the website you can quickly jump to the news articles associate with the stock ticker you just looked up!
 
+
 ![alt text](./assets/images/nav.png "Quickly navigate through the website!")
+
 
 Hovering over the news articles will dynamically change the container
 
+
 ![alt text](./assets/images/news.png "Make the article stand out!")
 
-Simply clicking on the article will open up the article in a seperate tab for you to read more in depth about the stock!
+
+Clicking on the article will open up the article in a separate tab for you to read more in depth about the stock!
+
 
 ![alt text](./assets/images/preview.png "Get more in depth information before investing!")
 
 As you search for more and more stocks, a list of your recently searched stocks will be displayed for easy access!
 
+
 ![alt text](./assets/images/save.png "Build a small watchlist of stocks!")
+
 
 As you build your stock watchlist, clicking on one of the saved stocks will display current stock information and news articles so you're always up to date!
 
 ![alt text](./assets/images/load.png "A simple click brings all the stock information!")
 
+
 Finally, at the bottom of our application, you will find a small section dedicated to the four developers of this application:computer:.
+
 
 ![alt text](./assets/images/who.png "Click on our names and follow our work on GitHub!")
 
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
+![David Ferreira](https://img.shields.io/github/followers/DiSantoz?style=social)
 
 ## License
 
