@@ -168,15 +168,22 @@ function getNews(stockname) {
                 var descrip = data.results[i].description;
                 // verifies description of article exists, if not then display sample text, else display description contents
                 if (descrip == null) {
+                    // Added create element 
+                    var cardContent = document.createElement("div");
                     var descripDetail = document.createElement("p");
-                    descripDetail.classList.add("card-content");
+                    cardContent.classList.add("card-content");
                     descripDetail.innerHTML = "Click here to read more!";
+                    cardContent.append(descripDetail)
                 } else {
+                    // experiment
+                    var cardContent = document.createElement("div")
+                    cardContent.classList.add("card-content");
                     var descripDetail = document.createElement("p");
                     var length = 125;
                     var trimmedString = descrip.substring(0, length);
-                    descripDetail.classList.add("card-content");
+                    // descripDetail.classList.add("card-content");
                     descripDetail.innerHTML = trimmedString;
+                    cardContent.append(descripDetail);
                 }
 
                 //Article Image
