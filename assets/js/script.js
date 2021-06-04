@@ -160,31 +160,28 @@ function getNews(stockname) {
                 var pub = data.results[i].title;
                 var authName = document.createElement("h5");
                 authName.classList.add("card-title", "text-uppercase", "light-blue", "lighten-3");
-                var titleLength = 80;
+                var titleLength = 35;
                 var trimmedArt = pub.substring(0, titleLength);
                 authName.innerHTML = trimmedArt + "...";
 
                 // Article description
                 var descrip = data.results[i].description;
-                // verifies description of article exists, if not then display sample text, else display description contents
+                // verifies description of article exists 
                 if (descrip == null) {
-                    // Added create element 
+                    // if not then display same text
                     var cardContent = document.createElement("div");
                     var descripDetail = document.createElement("p");
-                    descripDetail.style.color = "black";
                     cardContent.classList.add("card-content");
                     descripDetail.innerHTML = "Click here to read more!";
                     cardContent.append(descripDetail)
                 } else {
-                    // experiment
+                    // else display description contents
                     var cardContent = document.createElement("div")
                     cardContent.classList.add("card-content");
                     var descripDetail = document.createElement("p");
-                    descripDetail.style.color = "black";
-                    var length = 125;
+                    var length = 200;
                     var trimmedString = descrip.substring(0, length);
-                    // descripDetail.classList.add("card-content");
-                    descripDetail.innerHTML = trimmedString;
+                    descripDetail.innerHTML = trimmedString + "...";
                     cardContent.append(descripDetail);
                 }
 
@@ -193,7 +190,7 @@ function getNews(stockname) {
                 var forImgEl = document.createElement("img");
                 forImgEl.setAttribute("src", forImg);
                 forImgEl.setAttribute("width", "350");
-                forImgEl.setAttribute("height", "350");
+                forImgEl.setAttribute("height", "200");
                 //create div to hold image for card styling
                 var testImg = document.createElement("div");
                 testImg.classList.add("card-image");
@@ -205,10 +202,10 @@ function getNews(stockname) {
                 artcLink.setAttribute("href", artc);
                 artcLink.setAttribute("target", "_blank");
 
-                // wrap <a href> around <h5> <p> and <img> tags
+                // wrap <a href> around <h5> <div> and <img> tags
                 artcLink.appendChild(authName);
                 artcLink.appendChild(testImg);
-                artcLink.appendChild(descripDetail);
+                artcLink.appendChild(cardContent);
 
                 // append each variable
                 displayNews.appendChild(artcLink);
