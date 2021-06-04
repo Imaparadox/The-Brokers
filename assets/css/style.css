@@ -41,7 +41,7 @@ header {
     border-bottom: 2.5px solid black;
 }
 
-h1 {
+.brand-logo {
     display: inline;
     text-shadow: 1.5px 1px var(--senary-color);
     /* width: 50%;
@@ -53,6 +53,7 @@ h1 {
 .nav-wrapper {
     background-color: var(--primary-color);
     border: none;
+    
 }
 
 .nav-wrapper ul li a {
@@ -163,11 +164,14 @@ h1 {
 
 /* Smaller desktop screens  */
 @media screen and (max-width: 980px) {
-    header {
-            /* padding-bottom: 0;
-            justify-content: center; */
-            width: 100%;
-      }
+   
+    .nav-wrapper {
+        display: flex;
+        position: fixed;
+
+    }
+
+    
   }
 
 /* Tablets and smaller*/
@@ -185,11 +189,22 @@ h1 {
     }
 }
 
-/* iPhones */
+/* iPhones X */
 @media screen and (max-width: 375px) {
-    h1 {
+    /* header nav a {
+        display: inline-block;
        width: 50%;
-       margin: 15px auto;
-       font-size: 15px;
+       margin: 15px auto; 
+        font-size: 78px; 
+    }
+
+    .nav-wrapper a {
+        display: flex;
+     font-size: 78px;
+
+    } */
+
+    .brand-logo {
+        font-size: 50px;
     }
 }

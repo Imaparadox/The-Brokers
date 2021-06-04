@@ -12,6 +12,9 @@ modalEl2.style.display = "none";
 
 $(document).ready(function () {
 
+    // Nav menu dropdown
+    $('.sidenav').sidenav();
+
     // when page first loads all stored user inputs display as buttons
 
     keys = Object.keys(localStorage);
@@ -56,7 +59,7 @@ $(document).ready(function () {
             localStorage.setItem(stockname, "");
 
             $('#stock-container').append('<button type="submit" id="' + stockname + '" value="' + stockname + '" class="btn btn-stored" >' + stockname + '</button>');
-        
+
 
             // button click for stored stock tickers
             $('.btn-stored').click(function () {
@@ -65,7 +68,7 @@ $(document).ready(function () {
 
                 getStockInfo(stockname);
 
-             });
+            });
         };
 
         getStockInfo(stockname);
@@ -86,28 +89,28 @@ var getStockInfo = function (stockname) {
                 console.log(data);
 
                 // Stock Info Div Element to Display Stock Info
-                var displayStock = document.querySelector("#stock-info");  
-                $("#stock-info").empty();              
+                var displayStock = document.querySelector("#stock-info");
+                $("#stock-info").empty();
 
                 // Display Stock Symbol in Title
                 var sym = document.createElement("h3");
                 sym.textContent = "Stock:  " + data.meta.symbol;
                 sym.classList.add("card-title", "stock-info-title", "text-uppercase", "light-blue", "lighten-3", "grey-text", "text-darken-4");
-                displayStock.appendChild(sym);            
+                displayStock.appendChild(sym);
 
                 // Display Currency type in Title
                 curr = document.createElement("h5");
                 curr.textContent = "Currency:  " + data.meta.currency;
                 curr.classList.add("card-title", "stock-info-title", "text-uppercase", "light-blue", "lighten-3", "grey-text", "text-darken-4");
                 displayStock.appendChild(curr);
-                
+
 
                 // Loop over the last 10 hours for stock info
                 for (var i = 0; i < 10; i++) {
 
                     var stockInfoEl = document.createElement("div");
                     stockInfoEl.classList = "list-item justify-space-between center-align card-panel hoverable";
-                    
+
                     // display date and time for stock info
                     var dateTimeEl = document.createElement("div");
                     dateTimeEl.textContent = data.values[i].datetime + "                ";
@@ -127,8 +130,8 @@ var getStockInfo = function (stockname) {
 
                     // append all the stock info into the display stock div 
                     displayStock.appendChild(stockInfoEl);
-                }       
-                });
+                }
+            });
         } else {
             modal2.style.display = "block";
         }
@@ -163,17 +166,17 @@ function getNews(stockname) {
                 var authName = document.createElement("h5");
                 authName.classList.add("card-title", "text-uppercase", "light-blue", "lighten-3");
                 var titleLength = 80;
-                var trimmedArt=pub.substring(0, titleLength);
+                var trimmedArt = pub.substring(0, titleLength);
                 authName.innerHTML = trimmedArt + "...";
 
                 // Article description
                 var descrip = data.results[i].description;
                 // verifies description of article exists, if not then display sample text, else display description contents
-                if (descrip == null){
+                if (descrip == null) {
                     var descripDetail = document.createElement("p");
                     descripDetail.classList.add("card-content");
-                    descripDetail.innerHTML="Click here to read more!";
-                }else{
+                    descripDetail.innerHTML = "Click here to read more!";
+                } else {
                     var descripDetail = document.createElement("p");
                     var length = 125;
                     var trimmedString = descrip.substring(0, length);
