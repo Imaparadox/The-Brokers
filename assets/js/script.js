@@ -178,7 +178,7 @@ function getNews(stockname) {
                 } else {
                     // experiment
                     var cardContent = document.createElement("div")
-                    cardContent.classList.add("card-content", "grey-text", "text-darken-4");
+                    cardContent.classList.add("card-content");
                     var descripDetail = document.createElement("p");
                     descripDetail.style.color = "black";
                     var length = 125;
@@ -193,7 +193,7 @@ function getNews(stockname) {
                 var forImgEl = document.createElement("img");
                 forImgEl.setAttribute("src", forImg);
                 forImgEl.setAttribute("width", "350");
-                forImgEl.setAttribute("height", "400");
+                forImgEl.setAttribute("height", "350");
                 //create div to hold image for card styling
                 var testImg = document.createElement("div");
                 testImg.classList.add("card-image");
