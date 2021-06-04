@@ -169,11 +169,11 @@ function getNews(stockname) {
                 // verifies description of article exists, if not then display sample text, else display description contents
                 if (descrip == null) {
                     // Added create element 
-                    var cardContent = document.createElement("div");
+                    var cardDetail = document.createElement("div");
                     var descripDetail = document.createElement("p");
-                    cardContent.classList.add("card-content");
+                    cardDetail.classList.add("card-content");
                     descripDetail.innerHTML = "Click here to read more!";
-                    cardContent.append(descripDetail)
+                    cardDetail.append(descripDetail)
                 } else {
                     // experiment
                     var cardContent = document.createElement("div")
