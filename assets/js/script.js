@@ -6,7 +6,7 @@ var stockInputEl = document.querySelector("#stock");
 var modalEl1 = document.querySelector("#modal1");
 var modalEl2 = document.querySelector("#modal2");
 var userFormEl = document.querySelector("#user-form");
-// var stockname; 
+
 modalEl1.style.display = "none";
 modalEl2.style.display = "none";
 
@@ -16,7 +16,6 @@ $(document).ready(function () {
     $('.sidenav').sidenav();
 
     // when page first loads all stored user inputs display as buttons
-
     keys = Object.keys(localStorage);
     for (i = 0; i < keys.length; i++) {
         // append stock ticker to buttons
@@ -33,8 +32,6 @@ $(document).ready(function () {
     });
 
     // grab id value and push that to stockname
-
-
     $('#stock-input').click(function () {
 
         keys = Object.keys(localStorage);
@@ -70,9 +67,7 @@ $(document).ready(function () {
 
             });
         };
-
         getStockInfo(stockname);
-
         return false
     });
 
@@ -195,7 +190,7 @@ function getNews(stockname) {
                 testImg.classList.add("card-image");
                 testImg.appendChild(forImgEl);
 
-                //Onclick of article, open article on seperate tab
+                //Onclick of article, open article on separate tab
                 var artc = data.results[i].article_url;
                 var artcLink = document.createElement("a");
                 artcLink.setAttribute("href", artc);

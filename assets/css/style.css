@@ -56,22 +56,20 @@ header {
 .brand-logo {
     display: inline;
     text-shadow: 1.5px 1px var(--senary-color);
-    /* width: 50%;
-    margin: 15px auto;
-    font-size: ; 15px*/
+ 
 }
 
 
 /* Stock search styling  */
 .stock-search-card h2, .stock-container h2 {
     font-size: 40px;
-    /* white-space: nowrap; */
+    
 } 
 
 .stored-stocks {
     display: flex;
     flex-direction: column;
-    /* align-items: flex-start; */
+    
 }
 
 .btn-stored {
@@ -151,11 +149,6 @@ header {
     text-align: center;
 }
 
-/* We should use this to hide unnecessary sections before the user clicks search */
-/* .hide {
-    display: none;
-} */
-
 /* News Section Hover */
 #news:hover{
     filter: brightness(120%);
@@ -175,16 +168,24 @@ header {
         height: 150px;
     } 
 }
-  
-  /* Mobile phones*/
- @media screen and (max-width: 575px) {
-    main {
-       width: auto;
-      
-    }
-} 
+
+@media screen and (min-width: 575px) {
+    /* PLan to add */
+}
+
 
 /* iPhones X */
 /* @media screen and (max-width: 375px) {
 
+    .stock-search-card h2, .stock-container h2 {
+        font-size: 25px;
+    }
+    .card .card-image img {
+        width: 75%;
+        height: 175px;
+    } 
+
+    h5 {
+        font-size: 10px;
+    }
 } */
