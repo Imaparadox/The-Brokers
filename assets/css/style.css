@@ -41,25 +41,26 @@ header {
     border-bottom: 2.5px solid black;
 }
 
-.brand-logo {
-    display: inline;
-    text-shadow: 1.5px 1px var(--senary-color);
-    /* width: 50%;
-    margin: 15px auto;
-    font-size: 15px; */
-}
-
 /* Nav styling */
 .nav-wrapper {
     background-color: var(--primary-color);
     border: none;
-    
+
 }
 
 .nav-wrapper ul li a {
     font-size: 18px;
     text-shadow: 1.5px 1px var(--senary-color);
 }
+
+.brand-logo {
+    display: inline;
+    text-shadow: 1.5px 1px var(--senary-color);
+    /* width: 50%;
+    margin: 15px auto;
+    font-size: ; 15px*/
+}
+
 
 /* Stock search styling  */
 .stock-search-card h2, .stock-container h2 {
@@ -162,49 +163,28 @@ header {
     border-radius: 15px;
 }
 
-/* Smaller desktop screens  */
-@media screen and (max-width: 980px) {
-   
-    .nav-wrapper {
-        display: flex;
-        position: fixed;
-
-    }
-
-    
-  }
-
 /* Tablets and smaller*/
-@media screen and (max-width: 768px) {
-    header {
-        font-size: 17px;
+@media screen and (min-width: 768px) {
+    
+    .stock-search-card h2, .stock-container h2 {
+        font-size: 35px;
     }
+
+    .card .card-image img {
+        width: 100%;
+        height: 150px;
+    } 
 }
   
   /* Mobile phones*/
-@media screen and (max-width: 575px) {
-    header {
-       width: 100%;
-        /* padding: 15px 10px; */
+ @media screen and (max-width: 575px) {
+    main {
+       width: auto;
+      
     }
-}
+} 
 
 /* iPhones X */
-@media screen and (max-width: 375px) {
-    /* header nav a {
-        display: inline-block;
-       width: 50%;
-       margin: 15px auto; 
-        font-size: 78px; 
-    }
+/* @media screen and (max-width: 375px) {
 
-    .nav-wrapper a {
-        display: flex;
-     font-size: 78px;
-
-    } */
-
-    .brand-logo {
-        font-size: 50px;
-    }
-}
+} */
