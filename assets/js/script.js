@@ -169,16 +169,18 @@ function getNews(stockname) {
                 // verifies description of article exists, if not then display sample text, else display description contents
                 if (descrip == null) {
                     // Added create element 
-                    var cardDetail = document.createElement("div");
+                    var cardContent = document.createElement("div");
                     var descripDetail = document.createElement("p");
-                    cardDetail.classList.add("card-content");
+                    descripDetail.style.color = "black";
+                    cardContent.classList.add("card-content");
                     descripDetail.innerHTML = "Click here to read more!";
-                    cardDetail.append(descripDetail)
+                    cardContent.append(descripDetail)
                 } else {
                     // experiment
                     var cardContent = document.createElement("div")
-                    cardContent.classList.add("card-content");
+                    cardContent.classList.add("card-content", "grey-text", "text-darken-4");
                     var descripDetail = document.createElement("p");
+                    descripDetail.style.color = "black";
                     var length = 125;
                     var trimmedString = descrip.substring(0, length);
                     // descripDetail.classList.add("card-content");
@@ -191,7 +193,7 @@ function getNews(stockname) {
                 var forImgEl = document.createElement("img");
                 forImgEl.setAttribute("src", forImg);
                 forImgEl.setAttribute("width", "350");
-                forImgEl.setAttribute("height", "200");
+                forImgEl.setAttribute("height", "400");
                 //create div to hold image for card styling
                 var testImg = document.createElement("div");
                 testImg.classList.add("card-image");
