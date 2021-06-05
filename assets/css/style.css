@@ -41,15 +41,11 @@ header {
     border-bottom: 2.5px solid black;
 }
 
-h1 {
-    display: inline;
-    text-shadow: 1.5px 1px var(--senary-color);
-}
-
 /* Nav styling */
 .nav-wrapper {
     background-color: var(--primary-color);
     border: none;
+
 }
 
 .nav-wrapper ul li a {
@@ -57,26 +53,22 @@ h1 {
     text-shadow: 1.5px 1px var(--senary-color);
 }
 
-
-/* .stock-search-input input[type=text]:focus + label {
-    color: #000;
+.brand-logo {
+    text-shadow: 1.5px 1px var(--senary-color);
+ 
 }
 
-.stock-search-input input[type=text]:focus {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
-} */
 
 /* Stock search styling  */
 .stock-search-card h2, .stock-container h2 {
     font-size: 40px;
-    /* white-space: nowrap; */
+    
 } 
 
 .stored-stocks {
     display: flex;
     flex-direction: column;
-    /* align-items: flex-start; */
+    
 }
 
 .btn-stored {
@@ -136,6 +128,12 @@ h1 {
     color: var(--senary-color);
 }
 
+#news:hover{
+    filter: brightness(120%);
+    border: 2px solid teal;
+    border-radius: 15px;
+}
+
 /* Styling for footer */
 #footer {
     padding: 5px;  
@@ -156,14 +154,40 @@ h1 {
     text-align: center;
 }
 
-/* We should use this to hide unnecessary sections before the user clicks search */
-/* .hide {
-    display: none;
-} */
 
-/* News Section Hover */
-#news:hover{
-    filter: brightness(120%);
-    border: 2px solid teal;
-    border-radius: 15px;
+/* Mobile Responsiveness */
+
+@media screen and (max-width: 1415px){
+    nav .brand-logo {
+        inline-size: fit-content;
+    }
+
+    .card .card-content p{
+        font-size: smaller;
+    }
+
 }
+
+/* Tablets and smaller*/
+
+@media screen and (max-width: 768px) {
+    
+    .stock-search-card h2, .stock-container h2 {
+        font-size: 35px;
+    }
+
+    .card .card-title {
+        font-size: 20px;
+    }
+}
+
+/* Mobile Responsivness for Galaxy Fold Duo/ iPhone 5 and smaller */
+
+@media screen and (max-width: 325px) {
+    .card .card-content p{
+        font-size: x-small;
+    }
+}
+
+
+
