@@ -128,6 +128,12 @@ header {
     color: var(--senary-color);
 }
 
+#news:hover{
+    filter: brightness(120%);
+    border: 2px solid teal;
+    border-radius: 15px;
+}
+
 /* Styling for footer */
 #footer {
     padding: 5px;  
@@ -148,53 +154,40 @@ header {
     text-align: center;
 }
 
-/* News Section Hover */
-#news:hover{
-    filter: brightness(120%);
-    border: 2px solid teal;
-    border-radius: 15px;
-}
 
 /* Mobile Responsiveness */
-@media screen and (max-width: 992px){
+
+@media screen and (max-width: 1415px){
     nav .brand-logo {
         inline-size: fit-content;
+    }
+
+    .card .card-content p{
+        font-size: smaller;
     }
 
 }
 
 /* Tablets and smaller*/
-@media screen and (min-width: 768px) {
+
+@media screen and (max-width: 768px) {
     
     .stock-search-card h2, .stock-container h2 {
         font-size: 35px;
     }
 
-    .card .card-image img {
-        width: 100%;
-        height: 150px;
-    } 
-}
-
-@media screen and (max-width: 575px) {
-    .stock-icon {
-        display: none;
+    .card .card-title {
+        font-size: 20px;
     }
 }
 
+/* Mobile Responsivness for Galaxy Fold Duo/ iPhone 5 and smaller */
 
-/* iPhones X */
-/* @media screen and (max-width: 375px) {
-
-    .stock-search-card h2, .stock-container h2 {
-        font-size: 25px;
+@media screen and (max-width: 325px) {
+    .card .card-content p{
+        font-size: x-small;
     }
-    .card .card-image img {
-        width: 75%;
-        height: 175px;
-    } 
+}
 
-    h5 {
-        font-size: 10px;
-    }
-} */
+
+
